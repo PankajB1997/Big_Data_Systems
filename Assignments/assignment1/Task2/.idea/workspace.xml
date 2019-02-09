@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="CommonWords:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9523fa08-8b01-4938-aae4-4cdb703880a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/artifacts/Task2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/HDFSAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/SortHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="19b05cee-bfa6-43f2-aeac-191d80448ab8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Task2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/HDFSAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/SortHashMap.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/Step1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/Step2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/Step3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Task2/Step5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2_code/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Recommend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2_code/SortHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/SortHashMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2_code/Step1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Step1.java" afterDir="false" />
@@ -41,13 +36,11 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/CommonWords.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+            <state>
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1045#1053#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -68,10 +61,28 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/CommonWords.java" />
-        <option value="$PROJECT_DIR$/src/main/java/WordCount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/CommonWords.java" />
+        <option value="$PROJECT_DIR$/src/main/java/HDFSAPI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/SortHashMap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Step1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Step3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Step4_1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Step4_2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Step5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Step2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Recommend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Step5.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Step1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Step2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" />
       </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -93,26 +104,38 @@
         <subPane>
           <expand>
             <path>
-              <item name="CommonWords" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="462c0819:PsiDirectoryNode" />
+              <item name="RecommendationSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Task2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CommonWords" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="462c0819:PsiDirectoryNode" />
+              <item name="RecommendationSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Task2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CommonWords" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="462c0819:PsiDirectoryNode" />
+              <item name="RecommendationSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Task2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="CommonWords" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Task1" type="462c0819:PsiDirectoryNode" />
+              <item name="RecommendationSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Task2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecommendationSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Task2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Task2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RecommendationSystem" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -122,9 +145,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549705114028" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549705114144" />
     <property name="last_opened_file_path" value="C:/hadoop-2.8.0/share/hadoop/common/lib" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
@@ -146,11 +169,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9523fa08-8b01-4938-aae4-4cdb703880a6" name="Default Changelist" comment="" />
-      <created>1549683912696</created>
+      <changelist id="19b05cee-bfa6-43f2-aeac-191d80448ab8" name="Default Changelist" comment="" />
+      <created>1549702933037</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549683912696</updated>
+      <updated>1549702933037</updated>
     </task>
     <servers />
   </component>
@@ -163,14 +186,13 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22483222" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -188,32 +210,96 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CommonWords.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="108" selection-end-line="207" selection-end-column="1" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/hadoop-2.8.0/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.8.0.jar!/org/apache/hadoop/mapreduce/Mapper.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/HDFSAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+        <state relative-caret-position="221">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/CommonWords.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1045#1053#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/SortHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -224,7 +310,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>CommonWords:jar</last-edited>
+          <last-edited>Task2:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -272,12 +358,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Task1</last-edited>
+          <last-edited>Task2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
