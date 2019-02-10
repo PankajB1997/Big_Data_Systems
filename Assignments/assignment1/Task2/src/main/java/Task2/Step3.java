@@ -13,8 +13,6 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-import org.apache.hadoop.examples.HDFSAPI;
-
 public class Step3 {
     public static class Step31_UserVectorSplitterMapper extends Mapper<LongWritable, Text, IntWritable, Text> {
         private final static IntWritable k = new IntWritable();
@@ -24,10 +22,9 @@ public class Step3 {
         public void map(LongWritable key, Text values, Context context)
                 throws IOException, InterruptedException {
             //ToDo
-            //
-
         }
     }
+
     public static void run1(Map<String, String> path) throws IOException, ClassNotFoundException, InterruptedException {
         //get configuration info
         Configuration conf = Recommend.config();

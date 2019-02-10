@@ -7,28 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9523fa08-8b01-4938-aae4-4cdb703880a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/artifacts/Task2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/HDFSAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/SortHashMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step5.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Recommend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/SortHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/SortHashMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/Step1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Step1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/Step2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Step2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/Step3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Step3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/Step4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Step4_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/Step4_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Step4_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2_code/Step5.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2_code/Step5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step3.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -43,7 +26,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommonWords.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="119">
               <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,7 +105,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549705137567" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549784687363" />
     <property name="last_opened_file_path" value="C:/hadoop-2.8.0/share/hadoop/common/lib" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -209,7 +192,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommonWords.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="119">
           <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />

@@ -26,8 +26,12 @@ public class Step2 {
         @Override
         public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
             String[] tokens = Recommend.DELIMITER.split(values.toString());
-            //ToDo
-
+            for (String token: tokens) {
+                for (String eachtoken: tokens) {
+                    k.set(token.substring(0, token.indexOf(":")) + ":" + eachtoken.substring(0, eachtoken.indexOf(":")));
+                    context.write(k, v);
+                }
+            }
         }
     }
 
@@ -37,7 +41,12 @@ public class Step2 {
         @Override
         protected void reduce(Text key, Iterable<IntWritable> values, Context context)
                 throws IOException, InterruptedException {
-            //ToDo
+            int sum = 0;
+            for (IntWritable val: values) {
+                sum += val.get();
+            }
+            result.set(sum);
+            context.write(key, result);
         }
     }
 

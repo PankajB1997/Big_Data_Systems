@@ -7,14 +7,14 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 
 public class Recommend {
-    public static final String HDFS = "*********";
+    public static final String HDFS = "hdfs://master:9000/user/root/a1_t2";
 
     public static final Pattern DELIMITER = Pattern.compile("[\t,]");
 
     public static void main(String[] args) throws Exception {
         Map<String, String> path = new HashMap<String, String>();
         //path for local data
-        path.put("data", "******datapath*****");
+        path.put("data", "input/data.csv");
 
         //step1 i/o path
         path.put("Step1Input", HDFS + "/recommend");
