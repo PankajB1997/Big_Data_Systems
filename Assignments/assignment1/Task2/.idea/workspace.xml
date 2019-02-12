@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="19b05cee-bfa6-43f2-aeac-191d80448ab8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Task1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="204">
+              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -34,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="621">
-              <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2040">
-              <caret line="120" column="1" lean-forward="true" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+              <caret line="120" column="1" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,7 +90,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret lean-forward="true" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,7 +198,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549987090972" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549987335724" />
     <property name="last_opened_file_path" value="C:/hadoop-2.8.0/share/hadoop/common/lib" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -222,6 +217,26 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="Recommend" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Task2.Recommend" />
+      <module name="Task2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Task2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Recommend" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -237,18 +252,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2442953" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2442953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.3286119" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -297,7 +312,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
-          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -327,7 +342,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2040">
-          <caret line="120" column="1" lean-forward="true" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+          <caret line="120" column="1" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -347,7 +362,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret lean-forward="true" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -356,8 +370,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="204">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
