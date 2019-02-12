@@ -39,10 +39,10 @@ public class Recommend {
         path.put("Step4_2Input", path.get("Step4_1Output"));
         path.put("Step4_2Output", path.get("Step1Input") + "/step4_2");
 
-        //step5 i/o path
-        path.put("Step5Input1", path.get("Step4_2Output"));
-        path.put("Step5Input2", path.get("Step1Input") + "****data****");
-        path.put("Step5Output", path.get("Step1Input") + "/step5");
+//        //step5 i/o path
+//        path.put("Step5Input1", path.get("Step4_2Output"));
+//        path.put("Step5Input2", path.get("Step1Input") + "****data****");
+//        path.put("Step5Output", path.get("Step1Input") + "/step5");
 
 
         Step1.run(path);
@@ -51,12 +51,12 @@ public class Recommend {
         Step3.run2(path);
         Step4_1.run(path);
         Step4_2.run(path);
-        Step5.run(path);
+//        Step5.run(path);
 
         //example to show result
         HDFSAPI hdfs = new HDFSAPI(new Path(HDFS));
-        System.out.println(path.get("Step5Output")+"/part-r-00000");
-        hdfs.readFile(new Path(path.get("Step5Output")+"/part-r-00000"));
+        System.out.println(path.get("Step4_2Output")+"/part-r-00000");
+        hdfs.readFile(new Path(path.get("Step4_2Output")+"/part-r-00000"));
 
         System.exit(0);
 

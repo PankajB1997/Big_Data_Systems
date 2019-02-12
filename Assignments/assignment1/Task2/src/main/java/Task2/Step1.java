@@ -15,8 +15,8 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 public class Step1 {
     public static class Step1_ToItemPreMapper extends Mapper<Object, Text, IntWritable, Text> {
-        private final static IntWritable k = new IntWritable();
-        private final static Text v = new Text();
+        private IntWritable k = new IntWritable();
+        private Text v = new Text();
 
         @Override
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
@@ -33,7 +33,7 @@ public class Step1 {
     }
 
     public static class Step1_ToUserVectorReducer extends Reducer <IntWritable, Text, IntWritable, Text> {
-        private final static Text v = new Text();
+        private Text v = new Text();
 
         @Override
         protected void reduce(IntWritable key, Iterable<Text> values,

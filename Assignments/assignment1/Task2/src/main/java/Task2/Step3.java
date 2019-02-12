@@ -7,28 +7,23 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.FloatWritable;
+import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Step3 {
-    public static class Step31_UserVectorSplitterMapper extends Mapper<IntWritable, Text, Text, FloatWritable> {
-        private final static Text k = new Text();
-        private final static FloatWritable v = new FloatWritable();
+    public static class Step31_UserVectorSplitterMapper extends Mapper<LongWritable, Text, Text, Text> {
+        private Text k = new Text();
 
         @Override
-        public void map(IntWritable key, Text values, Context context)
+        public void map(LongWritable key, Text values, Context context)
                 throws IOException, InterruptedException {
-            String[] tokens = Recommend.DELIMITER.split(values.toString());
-            String[] itemAndScore;
-            for (String token: tokens) {
-                itemAndScore = token.split(":");
-                k.set(itemAndScore[0] + ":" + key.get());
-                v.set(Float.parseFloat(itemAndScore[1]));
-                context.write(k, v); // Write k-v of the form <"userID:itemID", score>
-            }
+            k.set(key.toString());
+            context.write(k, values);
         }
     }
 
@@ -42,7 +37,7 @@ public class Step3 {
         HDFSAPI hdfs = new HDFSAPI(new Path(Recommend.HDFS));
         hdfs.delFile(output);
         //set job
-        Job job =Job.getInstance(conf,"Step3_1");
+        Job job = Job.getInstance(conf,"Step3_1");
         job.setJarByClass(Step3.class);
 
         job.setMapperClass(Step31_UserVectorSplitterMapper.class);
@@ -56,14 +51,31 @@ public class Step3 {
         job.waitForCompletion(true);
     }
 
-    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<Text, IntWritable, Text, IntWritable> {
-//        private final static Text k = new Text();
-//        private final static IntWritable v = new IntWritable();
+    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<Text, Text, Text, Text> {
+        private Text k = new Text();
+        private Text v = new Text();
 
         @Override
-        public void map(Text key, IntWritable value, Context context) throws IOException, InterruptedException {
+        public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
+            String[] tokens = Recommend.DELIMITER.split(key.toString());
+            k.set(tokens[0]);
+            v.set(tokens[1] + ":" + value);
+            context.write(k, v);
+        }
+    }
 
-            context.write(key, value);
+    public static class Step32_ConoccurrenceColumnWrapperReducer extends Reducer<Text, Text, Text, Text> {
+        private Text v = new Text();
+
+        @Override
+        protected void reduce(Text key, Iterable<Text> values, Context context)
+                throws IOException, InterruptedException {
+            String combinedRow = "";
+            for (Text value: values) {
+                combinedRow += "," + value.toString();
+            }
+            v.set(combinedRow.substring(1));
+            context.write(key, v);
         }
     }
 
@@ -82,6 +94,7 @@ public class Step3 {
         job.setJarByClass(Step3.class);
 
         job.setMapperClass(Step32_CooccurrenceColumnWrapperMapper.class);
+        job.setReducerClass(Step32_ConoccurrenceColumnWrapperReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);

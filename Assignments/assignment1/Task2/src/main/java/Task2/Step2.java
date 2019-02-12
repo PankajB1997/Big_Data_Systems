@@ -20,8 +20,8 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Step2 {
     public static class Step2_UserVectorToCooccurrenceMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
-        private final static Text k = new Text();
-        private final static IntWritable v = new IntWritable(1);
+        private Text k = new Text();
+        private IntWritable v = new IntWritable(1);
 
         @Override
         public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
@@ -35,8 +35,8 @@ public class Step2 {
         }
     }
 
-    public static class Step2_UserVectorToConoccurrenceReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
-        private IntWritable result = new IntWritable();
+    public static class Step2_UserVectorToConoccurrenceReducer extends Reducer<Text, IntWritable, Text, Text> {
+        private Text v = new Text();
 
         @Override
         protected void reduce(Text key, Iterable<IntWritable> values, Context context)
@@ -45,8 +45,8 @@ public class Step2 {
             for (IntWritable val: values) {
                 sum += val.get();
             }
-            result.set(sum);
-            context.write(key, result);
+            v.set(Integer.toString(sum));
+            context.write(key, v);
         }
     }
 
