@@ -6,7 +6,7 @@ import java.util.Map;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
@@ -14,14 +14,21 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Step3 {
-    public static class Step31_UserVectorSplitterMapper extends Mapper<LongWritable, Text, IntWritable, Text> {
-        private final static IntWritable k = new IntWritable();
-        private final static Text v = new Text();
+    public static class Step31_UserVectorSplitterMapper extends Mapper<IntWritable, Text, Text, FloatWritable> {
+        private final static Text k = new Text();
+        private final static FloatWritable v = new FloatWritable();
 
         @Override
-        public void map(LongWritable key, Text values, Context context)
+        public void map(IntWritable key, Text values, Context context)
                 throws IOException, InterruptedException {
-            //ToDo
+            String[] tokens = Recommend.DELIMITER.split(values.toString());
+            String[] itemAndScore;
+            for (String token: tokens) {
+                itemAndScore = token.split(":");
+                k.set(itemAndScore[0] + ":" + key.get());
+                v.set(Float.parseFloat(itemAndScore[1]));
+                context.write(k, v); // Write k-v of the form <"userID:itemID", score>
+            }
         }
     }
 
@@ -49,15 +56,14 @@ public class Step3 {
         job.waitForCompletion(true);
     }
 
-    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
-        private final static Text k = new Text();
-        private final static IntWritable v = new IntWritable();
+    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<Text, IntWritable, Text, IntWritable> {
+//        private final static Text k = new Text();
+//        private final static IntWritable v = new IntWritable();
 
         @Override
-        public void map(LongWritable key, Text values,Context context)
-                throws IOException, InterruptedException {
-            //ToDo
-            //
+        public void map(Text key, IntWritable value, Context context) throws IOException, InterruptedException {
+
+            context.write(key, value);
         }
     }
 

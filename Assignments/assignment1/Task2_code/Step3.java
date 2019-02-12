@@ -20,6 +20,9 @@ public class Step3 {
         private final static IntWritable k = new IntWritable();
         private final static Text v = new Text();
 
+        // expecting itemID as output key
+        // and "user:score" as output value
+
         @Override
         public void map(LongWritable key, Text values, Context context)
                 throws IOException, InterruptedException {
@@ -46,18 +49,21 @@ public class Step3 {
         job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(Text.class);
 
-        FileInputFormat.addInputPath(job,input);
-        FileOutputFormat.setOutputPath(job,output);
+        FileInputFormat.addInputPath(job, input);
+        FileOutputFormat.setOutputPath(job, output);
         //run job
         job.waitForCompletion(true);
     }
 
-    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<Text, IntWritable, Text, IntWritable> {
         private final static Text k = new Text();
         private final static IntWritable v = new IntWritable();
 
+        // expecting
+        // and cooccurrence count as output value
+
         @Override
-        public void map(LongWritable key, Text values,Context context)
+        public void map(Text key, IntWritable value, Context context)
                 throws IOException, InterruptedException {
             //ToDo
             //

@@ -18,7 +18,7 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Step5 {
     public static class Step5_FilterSortMapper extends Mapper<LongWritable, Text, Text, Text> {
-        private String flag;
+        private String filename;
         private Text k;
         private Text v;
 
@@ -27,7 +27,7 @@ public class Step5 {
                 Mapper<LongWritable, Text, Text, Text>.Context context)
                 throws IOException, InterruptedException {
             FileSplit split = (FileSplit) context.getInputSplit();
-            flag = split.getPath().getParent().getName();// dataset
+            filename = split.getPath().getParent().getName(); //file name of the data set
         }
 
         @Override

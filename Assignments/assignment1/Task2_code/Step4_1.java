@@ -19,7 +19,14 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 
 public class Step4_1 {
-    public static class Step4_PartialMultiplyMapper extends Mapper<LongWritable, Text, Text, Text> {
+    public static class Step4_PartialMultiplyMapper extends Mapper<IntWritable, Text, Text, Text> {
+
+        // 4_1 input from 3_1
+        // expecting itemID as input key
+        // and "user:score, ..." as input value
+
+        // 4_2 input from 3_2
+        //
 
         // you can solve the co-occurrence Matrix/left matrix and score matrix/right matrix separately
 
@@ -30,7 +37,7 @@ public class Step4_1 {
         }
 
         @Override
-        public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
+        public void map(IntWritable key, Text values, Context context) throws IOException, InterruptedException {
             String[] tokens = Recommend.DELIMITER.split(values.toString());
             //ToDo
             //
