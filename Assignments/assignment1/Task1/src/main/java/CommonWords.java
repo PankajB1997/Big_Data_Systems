@@ -53,8 +53,8 @@ public class CommonWords {
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             StringTokenizer itr = new StringTokenizer(value.toString());
             while (itr.hasMoreTokens()) {
-                word.set(itr.nextToken());
-                if (stopwords.contains(word.toString()))
+                word.set(itr.nextToken().replaceAll("[^a-zA-Z ]", "").toLowerCase().trim());
+                if (stopwords.contains(word.toString()) || word.toString().length() == 0)
                     continue;
                 context.write(word, one);
             }
@@ -76,29 +76,21 @@ public class CommonWords {
 
     //Mapper1
     public static class Mapper1 extends Mapper<Text, Text, Text, Text> {
-        private Text k = new Text();
         private Text frequency = new Text();
 
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
             frequency.set(value + "_s1");
-            k.set(key.toString().replaceAll("[^a-zA-Z ]", "").toLowerCase().trim());
-            if (k.toString().length() > 0) {
-                context.write(k, frequency);
-            }
+            context.write(key, frequency);
         }
     }
 
     //Mapper2
     public static class Mapper2 extends Mapper<Text, Text, Text, Text> {
-        private Text k = new Text();
         private Text frequency = new Text();
 
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
             frequency.set(value + "_s2");
-            k.set(key.toString().replaceAll("[^a-zA-Z ]", "").toLowerCase().trim());
-            if (k.toString().length() > 0) {
-                context.write(k, frequency);
-            }
+            context.write(key, frequency);
         }
     }
 
@@ -108,7 +100,7 @@ public class CommonWords {
 
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
             int freq, count = 0;
-            int minimum = 0; // initialised a stub value of 0 for code compilation; this will not affect result
+            int minimum = Integer.MAX_VALUE;
             String[] vals;
             String stage;
             for (Text val: values) {
@@ -119,9 +111,7 @@ public class CommonWords {
                     stage = vals[1];
                     // if looking at first value in the list, set 'minimum' to that value
                     // else check if the value is lesser than current minimum and if so, set minimum to this value
-                    if (count == 1) {
-                        minimum = freq;
-                    } else if (minimum > freq) {
+                    if (minimum > freq) {
                         minimum = freq;
                     }
                 }
