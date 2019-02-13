@@ -75,27 +75,29 @@ public class Step4_1 {
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-            if (Iterables.size(values) == 2) {
-                System.out.println(key.toString());
-                float score = 0, count = 0;
-                String userID = "";
-                String[] vals;
+            int countUsers = 0;
+            int cooccurrence_count = -1;
+            for (Text value: values) {
+                if (value.toString().contains(",")) {
+                    countUsers++;
+                }
+                else {
+                    cooccurrence_count = Integer.parseInt(value.toString());
+                }
+            }
+            if (cooccurrence_count != -1 && countUsers >= 1) {
                 for (Text value: values) {
-                    System.out.println(value.toString());
                     if (value.toString().contains(",")) {
-                        vals = Recommend.DELIMITER.split(value.toString());
-                        score = Float.parseFloat(vals[0]);
-                        userID = vals[1];
-                    }
-                    else {
-                        count = Float.parseFloat(value.toString());
+                        String[] tokens = Recommend.DELIMITER.split(value.toString());
+                        float score = Float.parseFloat(tokens[0]);
+                        String product = Float.toString(cooccurrence_count * score);
+                        System.out.println(tokens[1] + "," + key.toString());
+                        k.set(tokens[1] + "," + key.toString());
+                        System.out.println(product);
+                        v.set(product);
+                        context.write(k, v);
                     }
                 }
-                System.out.println("User ID and Key: " + userID + "," + key);
-                k.set(userID + "," + key);
-                System.out.println("Score and count: " + score + "," + count);
-                v.set(Float.toString(score * count));
-                context.write(k, v);
             }
         }
     }
