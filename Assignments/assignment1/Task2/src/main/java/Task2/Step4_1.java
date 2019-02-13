@@ -21,7 +21,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Step4_1 {
-    public static class Step4_PartialMultiplyMapper extends Mapper<Text, Text, Text, Text> {
+    public static class Step4_PartialMultiplyMapper extends Mapper<LongWritable, Text, Text, Text> {
         private String filename;
         private Text k = new Text();
         private Text v = new Text();
@@ -33,7 +33,7 @@ public class Step4_1 {
         }
 
         @Override
-        public void map(Text key, Text values, Context context) throws IOException, InterruptedException {
+        public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[1]);
             String[] row, row2;

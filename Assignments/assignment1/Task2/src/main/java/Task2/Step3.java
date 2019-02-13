@@ -54,12 +54,12 @@ public class Step3 {
         job.waitForCompletion(true);
     }
 
-    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<Text, Text, Text, Text> {
+    public static class Step32_CooccurrenceColumnWrapperMapper extends Mapper<LongWritable, Text, Text, Text> {
         private Text k = new Text();
         private Text v = new Text();
 
         @Override
-        public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
+        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[0]);
             k.set(tokens[0]);
