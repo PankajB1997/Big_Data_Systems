@@ -25,7 +25,12 @@ public class Step2 {
 
         @Override
         public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
+            System.out.println(key.toString());
+            System.out.println(values.toString());
             String[] tokens = Recommend.DELIMITER.split(values.toString());
+            for (String token: tokens) {
+                System.out.println(tokens);
+            }
             for (String token: tokens) {
                 System.out.println(token);
                 for (String eachtoken: tokens) {
