@@ -41,7 +41,9 @@ public class Step4_1 {
             // input from user splitter mapper in step 3_1
             if (filename.equals("step3_1")) {
                 for (String token: tokens) {
+                    System.out.println(token);
                     for (String token2: tokens) {
+                        System.out.println(token2);
                         row = token.split(":");
                         row2 = token2.split(":");
                         k.set(row[0] + "," + row2[0]);
@@ -53,6 +55,7 @@ public class Step4_1 {
             // input from Co-occurrence matrix in step 3_2
             else if (filename.equals("step3_2")) {
                 for (String token: tokens) {
+                    System.out.println(token);
                     row = token.split(":");
                     k.set(key.toString() + "," + row[0]);
                     v.set(row[1]);

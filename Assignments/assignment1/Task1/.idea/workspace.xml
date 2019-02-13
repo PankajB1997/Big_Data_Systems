@@ -8,7 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="9523fa08-8b01-4938-aae4-4cdb703880a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/Task2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/Task2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_2.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />

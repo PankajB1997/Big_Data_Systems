@@ -23,6 +23,7 @@ public class Step4_2 {
 
         @Override
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
+            System.out.println(key);
             String[] tokens = Recommend.DELIMITER.split(key.toString());
             k.set(tokens[0] + "," + tokens[1]);
             v.set(value.toString());
