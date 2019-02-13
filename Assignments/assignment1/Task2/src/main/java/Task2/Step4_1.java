@@ -35,11 +35,15 @@ public class Step4_1 {
         @Override
         public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
+            System.out.println(key_value[0]);
+            System.out.println(key_value[1]);
             String[] tokens = Recommend.DELIMITER.split(key_value[1]);
             String[] row, row2;
             // input from user splitter mapper in step 3_1
             if (filename.equals("step3_1")) {
+                System.out.println("Inside 3_1");
                 for (String token: tokens) {
+                    System.out.println(token);
                     for (String token2: tokens) {
                         row = token.split(":");
                         row2 = token2.split(":");
@@ -51,7 +55,9 @@ public class Step4_1 {
             }
             // input from Co-occurrence matrix in step 3_2
             else if (filename.equals("step3_2")) {
+                System.out.println("Inside 3_2");
                 for (String token: tokens) {
+                    System.out.println(token);
                     row = token.split(":");
                     k.set(key_value[0].toString() + "," + row[0]);
                     v.set(row[1]);
