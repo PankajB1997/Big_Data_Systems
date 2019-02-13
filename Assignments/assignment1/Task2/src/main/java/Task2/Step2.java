@@ -15,35 +15,26 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
-//import recommendpkg.Step1.Step1_ToItemPreMapper;
-//import recommendpkg.Step1.Step1_ToUserVectorReducer;
-
 public class Step2 {
-    public static class Step2_UserVectorToCooccurrenceMapper extends Mapper<IntWritable, Text, Text, IntWritable> {
+    public static class Step2_UserVectorToCooccurrenceMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
         private Text k = new Text();
         private IntWritable v = new IntWritable(1);
 
         @Override
-        public void map(IntWritable key, Text values, Context context) throws IOException, InterruptedException {
-            System.out.println(key.toString());
-            System.out.println(values.toString());
+        public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
             String[] tokens = Recommend.DELIMITER.split(values.toString());
-            for (String token: tokens) {
-                System.out.println(token);
-            }
-            for (String token: tokens) {
-                System.out.println(token);
-                for (String eachtoken: tokens) {
-                    System.out.println(eachtoken);
-                    k.set(token.substring(0, token.indexOf(":")) + ":" + eachtoken.substring(0, eachtoken.indexOf(":")));
+
+            for (int i=1; i<tokens.length; i++) {
+                for (int j=1; j<tokens.length; j++) {
+                    k.set(tokens[i].substring(0, tokens[i].indexOf(":")) + ":" + tokens[j].substring(0, tokens[j].indexOf(":")));
                     context.write(k, v);
                 }
             }
         }
     }
 
-    public static class Step2_UserVectorToConoccurrenceReducer extends Reducer<Text, IntWritable, Text, Text> {
-        private Text v = new Text();
+    public static class Step2_UserVectorToConoccurrenceReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+        private IntWritable v = new IntWritable();
 
         @Override
         protected void reduce(Text key, Iterable<IntWritable> values, Context context)
@@ -52,7 +43,7 @@ public class Step2 {
             for (IntWritable val: values) {
                 sum += val.get();
             }
-            v.set(Integer.toString(sum));
+            v.set(sum);
             context.write(key, v);
         }
     }
@@ -75,7 +66,7 @@ public class Step2 {
         job.setReducerClass(Step2_UserVectorToConoccurrenceReducer.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
 
         FileInputFormat.addInputPath(job, input);
         FileOutputFormat.setOutputPath(job, output);

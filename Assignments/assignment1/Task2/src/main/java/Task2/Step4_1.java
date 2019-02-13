@@ -23,10 +23,8 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 public class Step4_1 {
     public static class Step4_PartialMultiplyMapper extends Mapper<Text, Text, Text, Text> {
         private String filename;
-        private Text k;
-        private Text v;
-
-        // you can solve the co-occurrence Matrix/left matrix and score matrix/right matrix separately
+        private Text k = new Text();
+        private Text v = new Text();
 
         @Override
         protected void setup(Context context) throws IOException, InterruptedException {
@@ -36,18 +34,17 @@ public class Step4_1 {
 
         @Override
         public void map(Text key, Text values, Context context) throws IOException, InterruptedException {
-            String[] tokens = Recommend.DELIMITER.split(values.toString());
+            String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
+            String[] tokens = Recommend.DELIMITER.split(key_value[1]);
             String[] row, row2;
             // input from user splitter mapper in step 3_1
             if (filename.equals("step3_1")) {
                 for (String token: tokens) {
-                    System.out.println(token);
                     for (String token2: tokens) {
-                        System.out.println(token2);
                         row = token.split(":");
                         row2 = token2.split(":");
                         k.set(row[0] + "," + row2[0]);
-                        v.set(row2[1] + "," + key.toString());
+                        v.set(row2[1] + "," + key_value[0].toString());
                         context.write(k, v);
                     }
                 }
@@ -55,20 +52,18 @@ public class Step4_1 {
             // input from Co-occurrence matrix in step 3_2
             else if (filename.equals("step3_2")) {
                 for (String token: tokens) {
-                    System.out.println(token);
                     row = token.split(":");
-                    k.set(key.toString() + "," + row[0]);
+                    k.set(key_value[0].toString() + "," + row[0]);
                     v.set(row[1]);
                     context.write(k, v);
                 }
             }
         }
-
     }
 
     public static class Step4_AggregateReducer extends Reducer<Text, Text, Text, Text> {
-        private Text k;
-        private Text v;
+        private Text k = new Text();
+        private Text v = new Text();
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {

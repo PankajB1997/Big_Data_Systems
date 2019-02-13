@@ -18,21 +18,21 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Step4_2 {
     public static class Step4_RecommendMapper extends Mapper<Text, Text, Text, Text> {
-        private Text k;
-        private Text v;
+        private Text k = new Text();
+        private Text v = new Text();
 
         @Override
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
-            System.out.println(key);
-            String[] tokens = Recommend.DELIMITER.split(key.toString());
+            String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
+            String[] tokens = Recommend.DELIMITER.split(key_value[0]);
             k.set(tokens[0] + "," + tokens[1]);
-            v.set(value.toString());
+            v.set(key_value[1].toString());
             context.write(k, v);
         }
     }
 
     public static class Step4_RecommendReducer extends Reducer<Text, Text, Text, FloatWritable> {
-        private FloatWritable v;
+        private FloatWritable v = new FloatWritable();
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
@@ -59,7 +59,7 @@ public class Step4_2 {
         job.setJarByClass(Step4_2.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(Text.class);
+        job.setOutputValueClass(FloatWritable.class);
 
         job.setMapperClass(Step4_2.Step4_RecommendMapper.class);
         job.setReducerClass(Step4_2.Step4_RecommendReducer.class);

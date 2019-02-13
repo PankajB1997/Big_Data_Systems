@@ -10,6 +10,7 @@ public class Recommend {
     public static final String HDFS = "hdfs://master:9000/user/root/a1_t2";
 
     public static final Pattern DELIMITER = Pattern.compile("[\t,]");
+    public static final Pattern TAB_DELIMITER = Pattern.compile("[\t]");
 
     public static void main(String[] args) throws Exception {
         Map<String, String> path = new HashMap<String, String>();

@@ -16,14 +16,17 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Step3 {
-    public static class Step31_UserVectorSplitterMapper extends Mapper<IntWritable, Text, Text, Text> {
+    public static class Step31_UserVectorSplitterMapper extends Mapper<LongWritable, Text, Text, Text> {
         private Text k = new Text();
+        private Text v = new Text();
 
         @Override
-        public void map(IntWritable key, Text values, Context context)
+        public void map(LongWritable key, Text values, Context context)
                 throws IOException, InterruptedException {
-            k.set(key.toString());
-            context.write(k, values);
+            String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
+            k.set(key_value[0]);
+            v.set(key_value[1]);
+            context.write(k, v);
         }
     }
 
@@ -42,7 +45,7 @@ public class Step3 {
 
         job.setMapperClass(Step31_UserVectorSplitterMapper.class);
 
-        job.setOutputKeyClass(IntWritable.class);
+        job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
 
         FileInputFormat.addInputPath(job,input);
@@ -57,9 +60,10 @@ public class Step3 {
 
         @Override
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
-            String[] tokens = Recommend.DELIMITER.split(key.toString());
+            String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
+            String[] tokens = Recommend.DELIMITER.split(key_value[0]);
             k.set(tokens[0]);
-            v.set(tokens[1] + ":" + value);
+            v.set(tokens[1] + ":" + key_value[1]);
             context.write(k, v);
         }
     }
@@ -97,7 +101,7 @@ public class Step3 {
         job.setReducerClass(Step32_ConoccurrenceColumnWrapperReducer.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
 
         FileInputFormat.addInputPath(job, input);
         FileOutputFormat.setOutputPath(job, output);
