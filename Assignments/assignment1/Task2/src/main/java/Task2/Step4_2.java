@@ -31,8 +31,8 @@ public class Step4_2 {
         }
     }
 
-    public static class Step4_RecommendReducer extends Reducer<Text, Text, Text, FloatWritable> {
-        private FloatWritable v = new FloatWritable();
+    public static class Step4_RecommendReducer extends Reducer<Text, Text, Text, Text> {
+        private Text v = new Text();
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
@@ -40,7 +40,7 @@ public class Step4_2 {
             for(Text value: values) {
                 sum += Float.parseFloat(value.toString());
             }
-            v.set(sum);
+            v.set(Float.toString(sum));
             context.write(key, v);
         }
     }
@@ -59,7 +59,7 @@ public class Step4_2 {
         job.setJarByClass(Step4_2.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(FloatWritable.class);
+        job.setOutputValueClass(Text.class);
 
         job.setMapperClass(Step4_2.Step4_RecommendMapper.class);
         job.setReducerClass(Step4_2.Step4_RecommendReducer.class);

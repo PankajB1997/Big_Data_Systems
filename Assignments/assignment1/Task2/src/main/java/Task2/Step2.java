@@ -66,7 +66,7 @@ public class Step2 {
         job.setReducerClass(Step2_UserVectorToConoccurrenceReducer.class);
 
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
 
         FileInputFormat.addInputPath(job, input);
         FileOutputFormat.setOutputPath(job, output);
