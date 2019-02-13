@@ -26,7 +26,7 @@ public class Step2 {
 
             for (int i=1; i<tokens.length; i++) {
                 for (int j=1; j<tokens.length; j++) {
-                    k.set(tokens[i].substring(0, tokens[i].indexOf(":")) + ":" + tokens[j].substring(0, tokens[j].indexOf(":")));
+                    k.set(tokens[i].substring(0, tokens[i].indexOf(":")) + "," + tokens[j].substring(0, tokens[j].indexOf(":")));
                     context.write(k, v);
                 }
             }

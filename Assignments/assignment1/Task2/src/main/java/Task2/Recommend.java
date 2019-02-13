@@ -11,6 +11,7 @@ public class Recommend {
 
     public static final Pattern DELIMITER = Pattern.compile("[\t,]");
     public static final Pattern TAB_DELIMITER = Pattern.compile("[\t]");
+    public static final Pattern COLON_DELIMITER = Pattern.compile("[:]");
 
     public static void main(String[] args) throws Exception {
         Map<String, String> path = new HashMap<String, String>();
