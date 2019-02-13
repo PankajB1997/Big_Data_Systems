@@ -49,8 +49,7 @@ public class Step5 {
         //get configuration info
         Configuration conf = Recommend.config();
         // I/O path
-        Path input1 = new Path(path.get("Step5Input1"));
-        Path input2 = new Path(path.get("Step5Input2"));
+        Path input = new Path(path.get("Step5Input"));
         Path output = new Path(path.get("Step5Output"));
         // delete last saved output
         HDFSAPI hdfs = new HDFSAPI(new Path(Recommend.HDFS));
@@ -68,7 +67,7 @@ public class Step5 {
         job.setInputFormatClass(TextInputFormat.class);
         job.setOutputFormatClass(TextOutputFormat.class);
 
-        FileInputFormat.setInputPaths(job, input1, input2);
+        FileInputFormat.setInputPaths(job, input);
         FileOutputFormat.setOutputPath(job, output);
 
         job.waitForCompletion(true);

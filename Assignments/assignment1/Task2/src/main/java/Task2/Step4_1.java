@@ -43,11 +43,12 @@ public class Step4_1 {
             if (filename.equals("step3_1")) {
                 System.out.println("Inside 3_1");
                 for (String token: tokens) {
-                    System.out.println(token);
                     for (String token2: tokens) {
                         row = token.split(":");
                         row2 = token2.split(":");
+                        System.out.println(row[0] + "," + row2[0]);
                         k.set(row[0] + "," + row2[0]);
+                        System.out.println(row2[1] + "," + key_value[0]);
                         v.set(row2[1] + "," + key_value[0]);
                         context.write(k, v);
                     }
@@ -57,9 +58,10 @@ public class Step4_1 {
             else if (filename.equals("step3_2")) {
                 System.out.println("Inside 3_2");
                 for (String token: tokens) {
-                    System.out.println(token);
                     row = token.split(":");
+                    System.out.println(key_value[0].toString() + "," + row[0]);
                     k.set(key_value[0].toString() + "," + row[0]);
+                    System.out.println(row[1]);
                     v.set(row[1]);
                     context.write(k, v);
                 }
@@ -74,10 +76,12 @@ public class Step4_1 {
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
             if (Iterables.size(values) == 2) {
+                System.out.println(key.toString());
                 float score = 0, count = 0;
                 String userID = "";
                 String[] vals;
                 for (Text value: values) {
+                    System.out.println(value.toString());
                     if (value.toString().contains(",")) {
                         vals = Recommend.DELIMITER.split(value.toString());
                         score = Float.parseFloat(vals[0]);
@@ -87,7 +91,9 @@ public class Step4_1 {
                         count = Float.parseFloat(value.toString());
                     }
                 }
+                System.out.println("User ID and Key: " + userID + "," + key);
                 k.set(userID + "," + key);
+                System.out.println("Score and count: " + score + "," + count);
                 v.set(Float.toString(score * count));
                 context.write(k, v);
             }

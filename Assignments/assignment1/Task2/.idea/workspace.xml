@@ -7,7 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19b05cee-bfa6-43f2-aeac-191d80448ab8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step5.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-85">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="119">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step3.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+            <state relative-caret-position="338">
+              <caret line="95" column="53" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,8 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
+            <state>
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,12 +129,12 @@
         <option value="$PROJECT_DIR$/src/main/java/Step5.java" />
         <option value="$PROJECT_DIR$/src/main/java/Step2.java" />
         <option value="$PROJECT_DIR$/src/main/java/Recommend.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Task2/Step5.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step1.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step4_2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step3.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Step5.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" />
       </list>
     </option>
@@ -204,7 +206,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550087150572" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550089373215" />
     <property name="last_opened_file_path" value="C:/hadoop-2.8.0/share/hadoop/common/lib" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -326,30 +328,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
           <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -369,7 +351,26 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -378,8 +379,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        <state relative-caret-position="338">
+          <caret line="95" column="53" selection-start-line="95" selection-start-column="53" selection-end-line="95" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
