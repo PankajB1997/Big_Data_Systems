@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9523fa08-8b01-4938-aae4-4cdb703880a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/.idea/artifacts/Task2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/artifacts/Task2_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/Task2_jar/Task2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
