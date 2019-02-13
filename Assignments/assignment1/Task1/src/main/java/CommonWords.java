@@ -76,23 +76,30 @@ public class CommonWords {
 
     //Mapper1
     public static class Mapper1 extends Mapper<Text, Text, Text, Text> {
+        private Text k = new Text();
         private Text frequency = new Text();
 
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
             frequency.set(value + "_s1");
-            context.write(key, frequency);
+            k.set(key.toString().replaceAll("[^a-zA-Z ]", "").toLowerCase().trim());
+            if (k.toString().length() > 0) {
+                context.write(k, frequency);
+            }
         }
     }
 
     //Mapper2
     public static class Mapper2 extends Mapper<Text, Text, Text, Text> {
+        private Text k = new Text();
         private Text frequency = new Text();
 
         public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
             frequency.set(value + "_s2");
-            context.write(key, frequency);
+            k.set(key.toString().replaceAll("[^a-zA-Z ]", "").toLowerCase().trim());
+            if (k.toString().length() > 0) {
+                context.write(k, frequency);
+            }
         }
-
     }
 
     //Get the number of common words reduce

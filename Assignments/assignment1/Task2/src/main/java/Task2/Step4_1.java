@@ -44,7 +44,7 @@ public class Step4_1 {
                         row = token.split(":");
                         row2 = token2.split(":");
                         k.set(row[0] + "," + row2[0]);
-                        v.set(row2[1] + "," + key_value[0].toString());
+                        v.set(row2[1] + "," + key_value[0]);
                         context.write(k, v);
                     }
                 }
