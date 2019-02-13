@@ -14,7 +14,7 @@ public class Recommend {
     public static void main(String[] args) throws Exception {
         Map<String, String> path = new HashMap<String, String>();
         //path for local data
-        path.put("data", "input/data.csv");
+        path.put("data", "input/data.txt");
 
         //step1 i/o path
         path.put("Step1Input", HDFS + "/recommend");
