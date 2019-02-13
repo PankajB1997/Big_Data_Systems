@@ -16,11 +16,11 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 public class Step3 {
-    public static class Step31_UserVectorSplitterMapper extends Mapper<LongWritable, Text, Text, Text> {
+    public static class Step31_UserVectorSplitterMapper extends Mapper<IntWritable, Text, Text, Text> {
         private Text k = new Text();
 
         @Override
-        public void map(LongWritable key, Text values, Context context)
+        public void map(IntWritable key, Text values, Context context)
                 throws IOException, InterruptedException {
             k.set(key.toString());
             context.write(k, values);

@@ -19,17 +19,17 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 //import recommendpkg.Step1.Step1_ToUserVectorReducer;
 
 public class Step2 {
-    public static class Step2_UserVectorToCooccurrenceMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+    public static class Step2_UserVectorToCooccurrenceMapper extends Mapper<IntWritable, Text, Text, IntWritable> {
         private Text k = new Text();
         private IntWritable v = new IntWritable(1);
 
         @Override
-        public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
+        public void map(IntWritable key, Text values, Context context) throws IOException, InterruptedException {
             System.out.println(key.toString());
             System.out.println(values.toString());
             String[] tokens = Recommend.DELIMITER.split(values.toString());
             for (String token: tokens) {
-                System.out.println(tokens);
+                System.out.println(token);
             }
             for (String token: tokens) {
                 System.out.println(token);
