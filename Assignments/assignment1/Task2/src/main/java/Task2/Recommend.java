@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.util.GenericOptionsParser;
 
 public class Recommend {
     public static final String HDFS = "hdfs://master:9000/user/root/a1_t2";
@@ -16,7 +17,7 @@ public class Recommend {
     public static void main(String[] args) throws Exception {
         Map<String, String> path = new HashMap<String, String>();
         //path for local data
-        path.put("data", "input/test.txt");
+        path.put("data", "input/test.txt"); // or args[0] / args[1] ???
 
         //step1 i/o path
         path.put("Step1Input", HDFS + "/recommend");

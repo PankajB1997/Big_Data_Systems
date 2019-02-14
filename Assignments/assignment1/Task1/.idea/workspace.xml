@@ -9,6 +9,9 @@
     <list default="true" id="9523fa08-8b01-4938-aae4-4cdb703880a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/CommonWords.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+            <state relative-caret-position="168">
+              <caret line="148" selection-start-line="148" selection-end-line="148" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,7 +70,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -97,6 +99,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -137,7 +140,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23154363" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23489933" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -179,8 +182,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/CommonWords.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        <state relative-caret-position="168">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

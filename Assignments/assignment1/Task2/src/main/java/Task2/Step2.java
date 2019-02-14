@@ -33,7 +33,7 @@ public class Step2 {
         }
     }
 
-    public static class Step2_UserVectorToConoccurrenceReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+    public static class Step2_UserVectorToCooccurrenceReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable v = new IntWritable();
 
         @Override
@@ -62,8 +62,8 @@ public class Step2 {
         job.setJarByClass(Step2.class);
 
         job.setMapperClass(Step2_UserVectorToCooccurrenceMapper.class);
-        job.setCombinerClass(Step2_UserVectorToConoccurrenceReducer.class);
-        job.setReducerClass(Step2_UserVectorToConoccurrenceReducer.class);
+        job.setCombinerClass(Step2_UserVectorToCooccurrenceReducer.class);
+        job.setReducerClass(Step2_UserVectorToCooccurrenceReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
