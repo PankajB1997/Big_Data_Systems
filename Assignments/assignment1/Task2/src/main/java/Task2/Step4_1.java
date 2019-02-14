@@ -80,11 +80,9 @@ public class Step4_1 {
             int cooccurrence_count = -1;
             for (Text value: values) {
                 if (value.toString().indexOf(",") != -1) {
-                    System.out.println("USER");
                     countUsers++;
                 }
                 else {
-                    System.out.println("ITEM");
                     cooccurrence_count = Integer.parseInt(value.toString());
                 }
             }
@@ -92,7 +90,7 @@ public class Step4_1 {
             System.out.println("Count users: " + countUsers);
             if (cooccurrence_count != -1 && countUsers >= 1) {
                 for (Text value: values) {
-                    if (value.toString().contains(",")) {
+                    if (value.toString().indexOf(",") != -1) {
                         String[] tokens = Recommend.DELIMITER.split(value.toString());
                         float score = Float.parseFloat(tokens[0]);
                         String product = Float.toString(cooccurrence_count * score);
