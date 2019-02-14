@@ -8,16 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9523fa08-8b01-4938-aae4-4cdb703880a6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/Task2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/Task2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step3.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Step4_1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3$Step31_UserVectorSplitterMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3$Step31_UserVectorSplitterMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3$Step32_ConoccurrenceColumnWrapperReducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3$Step32_ConoccurrenceColumnWrapperReducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3$Step32_CooccurrenceColumnWrapperMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3$Step32_CooccurrenceColumnWrapperMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step4_1$Step4_AggregateReducer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step4_1$Step4_AggregateReducer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step4_1$Step4_PartialMultiplyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step4_1$Step4_PartialMultiplyMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step4_1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/classes/Task2/Step4_1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/java/Task2/Recommend.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
