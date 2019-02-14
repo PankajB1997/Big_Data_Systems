@@ -76,7 +76,6 @@ public class Step4_1 {
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-            System.out.println("Key: " + key.toString());
             int countUsers = 0;
             int cooccurrence_count = -1;
             ArrayList<String> users = new ArrayList<String>();
@@ -89,16 +88,12 @@ public class Step4_1 {
                     cooccurrence_count = Integer.parseInt(value.toString());
                 }
             }
-            System.out.println("Cooccurrence count: " + cooccurrence_count);
-            System.out.println("Count users: " + countUsers);
             if (cooccurrence_count != -1 && countUsers >= 1) {
                 for (String user: users) {
                     String[] tokens = Recommend.DELIMITER.split(user);
                     float score = Float.parseFloat(tokens[0]);
                     String product = Float.toString(cooccurrence_count * score);
-                    System.out.println("Printed Key: " + tokens[1] + "," + key.toString());
                     k.set(tokens[1] + "," + key.toString());
-                    System.out.println("Printed Value: " + product);
                     v.set(product);
                     context.write(k, v);
                 }

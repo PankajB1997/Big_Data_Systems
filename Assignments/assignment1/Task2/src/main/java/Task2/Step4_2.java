@@ -26,7 +26,7 @@ public class Step4_2 {
             String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[0]);
             k.set(tokens[0] + "," + tokens[1]);
-            v.set(key_value[1].toString());
+            v.set(key_value[1]);
             context.write(k, v);
         }
     }

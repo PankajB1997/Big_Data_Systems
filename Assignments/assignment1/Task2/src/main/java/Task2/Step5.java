@@ -1,6 +1,9 @@
 package Task2;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
@@ -18,30 +21,35 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Step5 {
     public static class Step5_FilterSortMapper extends Mapper<LongWritable, Text, Text, Text> {
-        private String filename;
-        private Text k;
-        private Text v;
+        private Text k = new Text();
+        private Text v = new Text();
 
         @Override
-        protected void setup(
-                Mapper<LongWritable, Text, Text, Text>.Context context)
-                throws IOException, InterruptedException {
-            FileSplit split = (FileSplit) context.getInputSplit();
-            filename = split.getPath().getParent().getName(); //file name of the data set
-        }
-
-        @Override
-        public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
-            //you can use provided SortHashMap.java or design your own code.
-            //ToDo
+        public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+            String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
+            String[] tokens = Recommend.DELIMITER.split(key_value[0]);
+            k.set(tokens[0]);
+            v.set(tokens[1] + "," + key_value[1]);
+            context.write(k, v);
         }
     }
 
     public static class Step5_FilterSortReducer extends Reducer<Text, Text, Text, Text> {
+        private Text v = new Text();
+
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-            //you can use provided SortHashMap.java or design your own code.
-            //ToDo
+            HashMap<String, Float> scores_by_item = new HashMap<String, Float>();
+            for (Text value: values) {
+                String[] item_score = Recommend.DELIMITER.split(value.toString());
+                scores_by_item.put(item_score[0], Float.parseFloat(item_score[1]));
+            }
+            List<Map.Entry<String,Float>> sorted_list_items;
+            sorted_list_items = SortHashMap.sortHashMap(scores_by_item);
+            for(Map.Entry<String,Float> ilist : sorted_list_items) {
+                v.set(ilist.getKey() + "\t" + ilist.getValue());
+                context.write(key, v);
+            }
         }
     }
 

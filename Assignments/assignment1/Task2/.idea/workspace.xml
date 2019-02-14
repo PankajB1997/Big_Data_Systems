@@ -7,7 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19b05cee-bfa6-43f2-aeac-191d80448ab8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/SortHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/SortHashMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step4_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step4_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step5.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,8 +26,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
+            <state relative-caret-position="247">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="-663">
               <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
+            <state relative-caret-position="153">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3519#3527#0" expanded="true" />
@@ -83,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="204">
+              <caret line="22" lean-forward="true" selection-start-line="20" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,12 +96,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="253">
+              <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1547#1562#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -128,12 +134,13 @@
         <option value="$PROJECT_DIR$/src/main/java/Step2.java" />
         <option value="$PROJECT_DIR$/src/main/java/Recommend.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step1.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Task2/Step4_2.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step3.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/Step4_2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Task2/SortHashMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Step5.java" />
         <option value="$PROJECT_DIR$/src/main/java/Task2/Recommend.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" />
       </list>
     </option>
   </component>
@@ -204,7 +211,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550132818647" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550134661377" />
     <property name="last_opened_file_path" value="C:/hadoop-2.8.0/share/hadoop/common/lib" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -306,16 +313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/SortHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-102">
@@ -338,37 +335,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="-663">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -377,11 +345,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="153">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3519#3527#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" lean-forward="true" selection-start-line="20" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/SortHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="15" column="41" lean-forward="true" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#268#289#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Recommend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="51" column="13" lean-forward="true" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1547#1562#0" expanded="true" />
           </folding>
         </state>
       </provider>
