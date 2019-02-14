@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19b05cee-bfa6-43f2-aeac-191d80448ab8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Task2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Task2.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Task2/Step4_1.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -70,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
+            <state relative-caret-position="372">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -203,7 +204,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550128226989" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550129023553" />
     <property name="last_opened_file_path" value="C:/hadoop-2.8.0/share/hadoop/common/lib" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -376,8 +377,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Task2/Step4_1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="100" column="57" selection-start-line="100" selection-start-column="57" selection-end-line="100" selection-end-column="57" />
+        <state relative-caret-position="372">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
