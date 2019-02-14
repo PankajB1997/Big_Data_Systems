@@ -21,6 +21,10 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Step5 {
     public static class Step5_FilterSortMapper extends Mapper<LongWritable, Text, IntWritable, Text> {
+        // Student Name: Pankaj Bhootra.
+        // My NUSNET ID is E0009011. The last 3 digits is thus the number 11.
+        private static final int NUSNET_ID = 11;
+
         private IntWritable k = new IntWritable();
         private Text v = new Text();
 
@@ -28,9 +32,11 @@ public class Step5 {
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[0]);
-            k.set(Integer.parseInt(tokens[0]));
-            v.set(tokens[1] + "," + key_value[1]);
-            context.write(k, v);
+            if (Integer.parseInt(tokens[0]) == NUSNET_ID) {
+                k.set(Integer.parseInt(tokens[0]));
+                v.set(tokens[1] + "," + key_value[1]);
+                context.write(k, v);
+            }
         }
     }
 
