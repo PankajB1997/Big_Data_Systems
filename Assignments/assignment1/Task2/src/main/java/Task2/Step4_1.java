@@ -75,6 +75,11 @@ public class Step4_1 {
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+            System.out.println("Inside Reducer");
+            System.out.println(key.toString());
+            for (Text value: values) {
+                System.out.println(value.toString());
+            }
             int countUsers = 0;
             int cooccurrence_count = -1;
             for (Text value: values) {
