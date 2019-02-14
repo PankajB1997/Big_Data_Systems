@@ -30,9 +30,11 @@ File structure in this submitted zip:-
 
 Running Task 1 using HDFS:
 
-1. Upload the two input text files to HDFS.
+1. For this task, please note that the path to the stopwords.txt file has been hardcoded in the code to "hdfs://master:9000/user/root/a1_t1/input/stopwords.txt".
 
-2. Using the submitted JAR file, run the command "bin/hadoop jar CommonWords.java CommonWords <input1> <output1> <input2> <output2> <output3> <output4>", where all the input and output filepaths specified are those on HDFS. Output will be stored in the specified output paths and the final output is at <output4>.
+2. Upload the two input text files to HDFS.
+
+3. Using the submitted JAR file, run the command "bin/hadoop jar CommonWords.java CommonWords <input1> <output1> <input2> <output2> <output3> <output4>", where all the input and output filepaths specified are those on HDFS. Output will be stored in the specified output paths and the final output is at <output4>.
 
 
 ---
