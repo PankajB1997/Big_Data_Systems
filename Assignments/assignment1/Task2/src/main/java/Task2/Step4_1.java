@@ -89,7 +89,9 @@ public class Step4_1 {
             System.out.println("Cooccurrence count: " + cooccurrence_count);
             System.out.println("Count users: " + countUsers);
             if (cooccurrence_count != -1 && countUsers >= 1) {
+                System.out.println("Inside");
                 for (Text value: values) {
+                    System.out.println("Inside loop: " + value.toString());
                     if (value.toString().indexOf(",") != -1) {
                         String[] tokens = Recommend.DELIMITER.split(value.toString());
                         float score = Float.parseFloat(tokens[0]);
