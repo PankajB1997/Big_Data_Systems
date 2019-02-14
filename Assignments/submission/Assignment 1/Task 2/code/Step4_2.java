@@ -15,6 +15,9 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+// Second part of matrix multiplication, adding the grouped products to get the recommendation scores
+// for each < user, item > pair
+
 public class Step4_2 {
     public static class Step4_RecommendMapper extends Mapper<LongWritable, Text, Text, Text> {
         private Text k = new Text();
@@ -22,6 +25,10 @@ public class Step4_2 {
 
         @Override
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < "userID,itemB,itemID", "score*cooccurrence_count" >
+            // output to reducer is of the form < "userID,itemB", "score*cooccurrence_count" >
+
             String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[0]);
             k.set(tokens[0] + "," + tokens[1]);
@@ -35,6 +42,10 @@ public class Step4_2 {
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < "userID,itemB", iterable("score*cooccurrence_count") >
+            // output is of the form < "userID,itemB", "recommendation_score" >
+
             float sum = 0;
             for(Text value: values) {
                 sum += Float.parseFloat(value.toString());

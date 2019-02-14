@@ -13,14 +13,19 @@ import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
+// Further processing for matrices, to bring them into a form suitable for matrix multiplication
+
 public class Step3 {
     public static class Step31_UserVectorSplitterMapper extends Mapper<LongWritable, Text, Text, Text> {
         private Text k = new Text();
         private Text v = new Text();
 
         @Override
-        public void map(LongWritable key, Text values, Context context)
-                throws IOException, InterruptedException {
+        public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < userID, “itemID:score,itemID:score,...” >
+            // output to reducer is of the form < "itemID", "userID_user:score" >
+
             String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[1]);
             for (String token: tokens) {
@@ -37,6 +42,10 @@ public class Step3 {
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < "itemID", iterable("userID:score") >
+            // output is of the form < "itemID", "userID_user:score,userID_user:score,..." >
+
             String scores_by_users = "";
             for (Text value: values) {
                 scores_by_users += "," + value.toString();
@@ -78,6 +87,10 @@ public class Step3 {
 
         @Override
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < "itemA:itemB", cooccurrence_count >
+            // output to reducer is of the form < "itemA", "itemB:cooccurrence_count" >
+
             String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[0]);
             k.set(tokens[0]);
@@ -90,8 +103,11 @@ public class Step3 {
         private Text v = new Text();
 
         @Override
-        protected void reduce(Text key, Iterable<Text> values, Context context)
-                throws IOException, InterruptedException {
+        protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < "itemA", iterable("itemB:cooccurrence_count") >
+            // output is of the form < "itemA", "itemB:cooccurrence_count,itemC:cooccurrence_count,..." >
+
             String combinedRow = "";
             for (Text value: values) {
                 combinedRow += "," + value.toString();

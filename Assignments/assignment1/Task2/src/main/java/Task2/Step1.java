@@ -13,6 +13,8 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.Reducer;
 
+// Building the score matrix by grouping the input data by user ID
+
 public class Step1 {
     public static class Step1_ToItemPreMapper extends Mapper<Object, Text, IntWritable, Text> {
         private IntWritable k = new IntWritable();
@@ -21,6 +23,9 @@ public class Step1 {
         @Override
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
 
+            // input is of the form < "userID, itemID, score" >
+            // output to reducer is of the form < userID, “itemID:score” >
+
             String[] tokens = Recommend.DELIMITER.split(value.toString());
             int userID = Integer.parseInt(tokens[0]);
             String itemID = tokens[1];
@@ -28,7 +33,6 @@ public class Step1 {
             k.set(userID);
             v.set(itemID+":"+pref);
             context.write(k, v);
-
         }
     }
 
@@ -39,7 +43,10 @@ public class Step1 {
         protected void reduce(IntWritable key, Iterable<Text> values,
                               Reducer<IntWritable, Text, IntWritable, Text>.Context context)
                 throws IOException, InterruptedException {
-            //Auto-generated method stub
+
+            // input is of the form < "userID", iterable("itemID, score") >
+            // output is of the form < userID, “itemID:score,itemID:score,...” >
+
             StringBuilder sb = new StringBuilder();
             for (Text value:values) {
                 sb.append("," + value.toString());
@@ -47,7 +54,6 @@ public class Step1 {
             v.set(sb.toString().replaceFirst(",", ""));
             context.write(key, v);
         }
-
     }
 
     public static void run(Map<String, String> path) throws IOException, ClassNotFoundException, InterruptedException {

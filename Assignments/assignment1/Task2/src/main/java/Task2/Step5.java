@@ -19,6 +19,9 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+// Filtering the results for a given user ID and sorting the item IDs by the recommendation scores
+// in descending order so as to show the best recommended item IDs first
+
 public class Step5 {
     public static class Step5_FilterSortMapper extends Mapper<LongWritable, Text, IntWritable, Text> {
         // Student Name: Pankaj Bhootra.
@@ -30,6 +33,10 @@ public class Step5 {
 
         @Override
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < "userID,itemB", "recommendation_score" >
+            // output to reducer is of the form < "userID", "itemID,recommendation_score" >
+
             String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[0]);
             if (Integer.parseInt(tokens[0]) == NUSNET_ID) {
@@ -45,6 +52,10 @@ public class Step5 {
 
         @Override
         public void reduce(IntWritable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+
+            // input is of the form < "userID", iterable("itemID,recommendation_score") >
+            // output is sorted in descending order of score, of the form < "userID", "itemID    recommendation_score" >
+
             HashMap<String, Float> scores_by_item = new HashMap<String, Float>();
             for (Text value: values) {
                 String[] item_score = Recommend.DELIMITER.split(value.toString());

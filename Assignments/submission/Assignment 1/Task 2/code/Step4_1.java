@@ -16,6 +16,8 @@ import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
+// First part of matrix multiplication, getting all the products and grouping the ones that need to be added together
+
 public class Step4_1 {
     public static class Step4_PartialMultiplyMapper extends Mapper<LongWritable, Text, Text, Text> {
         private Text k = new Text();
@@ -23,6 +25,14 @@ public class Step4_1 {
 
         @Override
         public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
+
+            // input is of two possible forms:
+            // 1. < "itemA", iterable("itemB:cooccurrence_count,itemC:cooccurrence_count,...") >
+            // 2. < "itemID", iterable("userID_user:score,userID_user:score,...") >
+            // output to reducer is of two possible forms:
+            // 1. < "itemID", "userID_user:score" >
+            // 2. < "itemA", "itemB:cooccurrence_count" >
+
             String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
             k.set(key_value[0]);
             String[] tokens = Recommend.DELIMITER.split(key_value[1]);
@@ -39,6 +49,12 @@ public class Step4_1 {
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+
+            // input is of two possible forms:
+            // 1. < "itemID", "userID_user:score" >
+            // 2. < "itemA", "itemB:cooccurrence_count" >
+            // output is of the form < "userID,itemB,itemID", "score*cooccurrence_count" >
+
             ArrayList<String> scores_by_users = new ArrayList<String>();
             ArrayList<String> counts_by_items = new ArrayList<String>();
             for (Text value: values) {
