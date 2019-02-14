@@ -2,14 +2,10 @@ package Task2;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Map;
 
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -36,20 +32,15 @@ public class Step4_1 {
         @Override
         public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
-            System.out.println(key_value[0]);
-            System.out.println(key_value[1]);
             String[] tokens = Recommend.DELIMITER.split(key_value[1]);
             String[] row, row2;
             // input from user splitter mapper in step 3_1
             if (filename.equals("step3_1")) {
-                System.out.println("Inside 3_1");
                 for (String token: tokens) {
                     for (String token2: tokens) {
                         row = token.split(":");
                         row2 = token2.split(":");
-                        System.out.println(row[0] + "," + row2[0]);
                         k.set(row[0] + "," + row2[0]);
-                        System.out.println(row2[1] + "," + key_value[0]);
                         v.set(row2[1] + "," + key_value[0]);
                         context.write(k, v);
                     }
@@ -57,12 +48,9 @@ public class Step4_1 {
             }
             // input from Co-occurrence matrix in step 3_2
             else if (filename.equals("step3_2")) {
-                System.out.println("Inside 3_2");
                 for (String token: tokens) {
                     row = token.split(":");
-                    System.out.println(key_value[0].toString() + "," + row[0]);
                     k.set(key_value[0].toString() + "," + row[0]);
-                    System.out.println(row[1]);
                     v.set(row[1]);
                     context.write(k, v);
                 }
