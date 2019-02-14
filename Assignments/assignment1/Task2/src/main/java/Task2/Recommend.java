@@ -46,10 +46,10 @@ public class Recommend {
 //        path.put("Step5Output", path.get("Step1Input") + "/step5");
 
 
-        Step1.run(path);
-        Step2.run(path);
-        Step3.run1(path);
-        Step3.run2(path);
+//        Step1.run(path);
+//        Step2.run(path);
+//        Step3.run1(path);
+//        Step3.run2(path);
         Step4_1.run(path);
         Step4_2.run(path);
 //        Step5.run(path);
