@@ -12,48 +12,23 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
-import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Step4_1 {
     public static class Step4_PartialMultiplyMapper extends Mapper<LongWritable, Text, Text, Text> {
-        private String filename;
         private Text k = new Text();
         private Text v = new Text();
 
         @Override
-        protected void setup(Context context) throws IOException, InterruptedException {
-            FileSplit split = (FileSplit) context.getInputSplit();
-            filename = split.getPath().getParent().getName(); //file name of the data set
-        }
-
-        @Override
         public void map(LongWritable key, Text values, Context context) throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
+            k.set(key_value[0]);
             String[] tokens = Recommend.DELIMITER.split(key_value[1]);
-            String[] row, row2;
-            // input from user splitter mapper in step 3_1
-            if (filename.equals("step3_1")) {
-                for (String token: tokens) {
-                    for (String token2: tokens) {
-                        row = token.split(":");
-                        row2 = token2.split(":");
-                        k.set(row[0] + "," + row2[0]);
-                        v.set(row2[1] + "," + key_value[0]);
-                        context.write(k, v);
-                    }
-                }
-            }
-            // input from Co-occurrence matrix in step 3_2
-            else if (filename.equals("step3_2")) {
-                for (String token: tokens) {
-                    row = token.split(":");
-                    k.set(key_value[0].toString() + "," + row[0]);
-                    v.set(row[1]);
-                    context.write(k, v);
-                }
+            for (String token: tokens) {
+                v.set(token);
+                context.write(k, v);
             }
         }
     }
@@ -64,25 +39,28 @@ public class Step4_1 {
 
         @Override
         public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-            int countUsers = 0;
-            int cooccurrence_count = 0;
-            ArrayList<String> users = new ArrayList<String>();
+            ArrayList<String> scores_by_users = new ArrayList<String>();
+            ArrayList<String> counts_by_items = new ArrayList<String>();
             for (Text value: values) {
-                if (value.toString().indexOf(",") != -1) {
-                    users.add(value.toString());
-                    countUsers++;
+                if (value.toString().indexOf("_user") != -1) {
+                    scores_by_users.add(value.toString());
                 }
                 else {
-                    cooccurrence_count = Integer.parseInt(value.toString());
+                    counts_by_items.add(value.toString());
                 }
             }
-            if (countUsers >= 1) {
-                for (String user: users) {
-                    String[] tokens = Recommend.DELIMITER.split(user);
-                    float score = Float.parseFloat(tokens[0]);
-                    String product = Float.toString(cooccurrence_count * score);
-                    k.set(tokens[1] + "," + key.toString());
-                    v.set(product);
+            String userID, itemID;
+            int count;
+            float score, product;
+            for (String user_score: scores_by_users) {
+                userID = user_score.substring(0, user_score.indexOf("_user"));
+                score = Float.parseFloat(user_score.substring(user_score.indexOf(":") + 1));
+                for (String item_count: counts_by_items) {
+                    itemID = item_count.substring(0, item_count.indexOf(":"));
+                    count = Integer.parseInt(item_count.substring(item_count.indexOf(":") + 1));
+                    product = score * count;
+                    k.set(userID + "," + itemID + "," + key.toString());
+                    v.set(Float.toString(product));
                     context.write(k, v);
                 }
             }

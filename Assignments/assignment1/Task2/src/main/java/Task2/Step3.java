@@ -22,9 +22,28 @@ public class Step3 {
         public void map(LongWritable key, Text values, Context context)
                 throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(values.toString());
-            k.set(key_value[0]);
-            v.set(key_value[1]);
-            context.write(k, v);
+            String[] tokens = Recommend.DELIMITER.split(key_value[1]);
+            for (String token: tokens) {
+                String[] vals = token.split(":");
+                k.set(vals[0]);
+                v.set(key_value[0] + "_user:" + vals[1]);
+                context.write(k, v);
+            }
+        }
+    }
+
+    public static class Step31_UserVectorSplitterReducer extends Reducer<Text, Text, Text, Text> {
+        private Text v = new Text();
+
+        @Override
+        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+            String scores_by_users = "";
+            for (Text value: values) {
+                scores_by_users += "," + value.toString();
+            }
+            scores_by_users = scores_by_users.replaceFirst(",", "");
+            v.set(scores_by_users);
+            context.write(key, v);
         }
     }
 
@@ -42,6 +61,7 @@ public class Step3 {
         job.setJarByClass(Step3.class);
 
         job.setMapperClass(Step31_UserVectorSplitterMapper.class);
+        job.setReducerClass(Step31_UserVectorSplitterReducer.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
