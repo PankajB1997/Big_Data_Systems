@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Map;
 
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.FloatWritable;
@@ -78,8 +79,10 @@ public class Step4_1 {
             System.out.println("Key: " + key.toString());
             int countUsers = 0;
             int cooccurrence_count = -1;
+            ArrayList<String> users = new ArrayList<String>();
             for (Text value: values) {
                 if (value.toString().indexOf(",") != -1) {
+                    users.add(value.toString());
                     countUsers++;
                 }
                 else {
@@ -89,19 +92,15 @@ public class Step4_1 {
             System.out.println("Cooccurrence count: " + cooccurrence_count);
             System.out.println("Count users: " + countUsers);
             if (cooccurrence_count != -1 && countUsers >= 1) {
-                System.out.println("Inside");
-                for (Text value: values) {
-                    System.out.println("Inside loop: " + value.toString());
-                    if (value.toString().indexOf(",") != -1) {
-                        String[] tokens = Recommend.DELIMITER.split(value.toString());
-                        float score = Float.parseFloat(tokens[0]);
-                        String product = Float.toString(cooccurrence_count * score);
-                        System.out.println("Printed Key: " + tokens[1] + "," + key.toString());
-                        k.set(tokens[1] + "," + key.toString());
-                        System.out.println("Printed Value: " + product);
-                        v.set(product);
-                        context.write(k, v);
-                    }
+                for (String user: users) {
+                    String[] tokens = Recommend.DELIMITER.split(user);
+                    float score = Float.parseFloat(tokens[0]);
+                    String product = Float.toString(cooccurrence_count * score);
+                    System.out.println("Printed Key: " + tokens[1] + "," + key.toString());
+                    k.set(tokens[1] + "," + key.toString());
+                    System.out.println("Printed Value: " + product);
+                    v.set(product);
+                    context.write(k, v);
                 }
             }
         }
