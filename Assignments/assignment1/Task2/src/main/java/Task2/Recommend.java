@@ -53,9 +53,9 @@ public class Recommend {
         Step4_2.run(path);
         Step5.run(path);
 
-        System.out.println(path.get("Step4_2Output")+"/part-r-00000");
+        System.out.println(path.get("Step5Output")+"/part-r-00000");
 //        HDFSAPI hdfs = new HDFSAPI(new Path(HDFS));
-//        hdfs.readFile(new Path(path.get("Step4_2Output")+"/part-r-00000"));
+//        hdfs.readFile(new Path(path.get("Step5Output")+"/part-r-00000"));
 
         System.exit(0);
     }

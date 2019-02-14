@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.FloatWritable;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -18,25 +20,25 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class Step5 {
-    public static class Step5_FilterSortMapper extends Mapper<LongWritable, Text, Text, Text> {
-        private Text k = new Text();
+    public static class Step5_FilterSortMapper extends Mapper<LongWritable, Text, IntWritable, Text> {
+        private IntWritable k = new IntWritable();
         private Text v = new Text();
 
         @Override
         public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
             String[] key_value = Recommend.TAB_DELIMITER.split(value.toString());
             String[] tokens = Recommend.DELIMITER.split(key_value[0]);
-            k.set(tokens[0]);
+            k.set(Integer.parseInt(tokens[0]));
             v.set(tokens[1] + "," + key_value[1]);
             context.write(k, v);
         }
     }
 
-    public static class Step5_FilterSortReducer extends Reducer<Text, Text, Text, Text> {
+    public static class Step5_FilterSortReducer extends Reducer<IntWritable, Text, IntWritable, Text> {
         private Text v = new Text();
 
         @Override
-        public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+        public void reduce(IntWritable key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
             HashMap<String, Float> scores_by_item = new HashMap<String, Float>();
             for (Text value: values) {
                 String[] item_score = Recommend.DELIMITER.split(value.toString());
@@ -64,7 +66,7 @@ public class Step5 {
         Job job = Job.getInstance(conf);
         job.setJarByClass(Step5.class);
 
-        job.setOutputKeyClass(Text.class);
+        job.setOutputKeyClass(IntWritable.class);
         job.setOutputValueClass(Text.class);
 
         job.setMapperClass(Step5_FilterSortMapper.class);
