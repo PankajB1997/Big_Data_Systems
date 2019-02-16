@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7c3490db-861e-49f7-8aeb-f82012bbfa08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Task1-build.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/CommonWords.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/Test.sc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assignment1/Task1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/Task1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assignment1/Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/Task2/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7c3490db-861e-49f7-8aeb-f82012bbfa08" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/project/project/target/" />
@@ -115,7 +107,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550228764168" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550311364056" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RunDashboard">
