@@ -53,6 +53,7 @@ public class CommonWords {
         public void map(Object key, Text value, Context context) throws IOException, InterruptedException {
             StringTokenizer itr = new StringTokenizer(value.toString());
             while (itr.hasMoreTokens()) {
+                // This code is edited to convert the tokens to lower case and remove punctuations
                 word.set(itr.nextToken().replaceAll("[^a-zA-Z ]", "").toLowerCase().trim());
                 if (stopwords.contains(word.toString()) || word.toString().length() == 0)
                     continue;
