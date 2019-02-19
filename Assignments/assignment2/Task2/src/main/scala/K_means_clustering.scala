@@ -14,25 +14,20 @@ object Assignment2 extends Assignment2 {
 
   @transient lazy val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Assignment2")
   @transient lazy val sc: SparkContext = new SparkContext(conf)
-
   //sc.setLogLevel("WARN")
 
   /** Main function */
   def main(args: Array[String]): Unit = {
-
     val lines   = sc.textFile("QA_data.csv")
     val raw     = rawPostings(lines)
     val grouped = groupedPostings(raw)
     val scored  = scoredPostings(grouped)
     val vectors = vectorPostings(scored)
-
-
     val means   = kmeans(sampleVectors(vectors), vectors, debug = true)
     val results = clusterResults(means, vectors)
     printResults(results)
   }
 }
-
 
 /** The parsing and kmeans methods */
 class Assignment2 extends Serializable {
@@ -42,7 +37,6 @@ class Assignment2 extends Serializable {
     List(
       "Machine-Learning", "Compute-Science", "Algorithm", "Big-Data", "Data-Analysis", "Security", "Silicon Valley", "Computer-Systems",
       "Deep-learning", "Internet-Service-Providers", "Programming-Language", "Cloud-services", "Software-Engineering", "Embedded-System", "Architecture")
-
 
   /** K-means parameter: How "far apart" languages should be for the kmeans algorithm? */
   def DomainSpread = 50000
@@ -57,11 +51,8 @@ class Assignment2 extends Serializable {
   /** K-means parameter: Maximum iterations */
   def kmeansMaxIterations = 120
 
-
-  //
   //
   // Parsing utilities:
-  //
   //
 
   /** Load postings from the given file */
@@ -69,68 +60,51 @@ class Assignment2 extends Serializable {
     lines.map(line => {
       val arr = line.split(",")
       Posting(postingType =    arr(0).toInt,
-              id =             arr(1).toInt,
-              acceptedAnswer = if (arr(2) == "") None else Some(arr(2).toInt),
-              parentId =       if (arr(3) == "") None else Some(arr(3).toInt),
-              score =          arr(4).toInt,
-              tags =           if (arr.length >= 6) Some(arr(5).intern()) else None)
+        id =             arr(1).toInt,
+//        acceptedAnswer = if (arr(2) == "") None else Some(arr(2).toInt),
+        parentId =       if (arr(2) == "") None else Some(arr(2).toInt),
+        score =          arr(3).toInt,
+        tags =           if (arr.length >= 5) Some(arr(4).intern()) else None)
     })
 
-
   /** Group the questions and answers together */
-  /** please keep the function name but you can modify the parameters for this function*/
-  def groupedPostings(raw):  = {
+  /** please keep the function name but you can modify the parameters for this function */
+  def groupedPostings(raw: RDD[Posting]): RDD[(Int, Iterable[Posting])]  = {
     // Filter the questions and answers separately
-    // Prepare them for a join operation by extracting the QID value in the first element of a tuple.
-
+    // Prepare them for a join operation by extracting the QID value in the first element of a tuple
+    raw.map(x => (x.parentId.getOrElse(x.id), x)).groupByKey()
   }
-
 
   /** Compute the maximum score for each posting */
-  /** please keep the function name but you can modify the parameters for this function*/
-  def scoredPostings(grouped):  = {
-
-  	//ToDo
-  	//
+  /** Return the question ID, highest score among answers, and the domain **/
+  /** please keep the function name but you can modify the parameters for this function */
+  def scoredPostings(grouped: RDD[(Int, Iterable[Posting])]): RDD[(Int, Int, Option[String])] = {
+    grouped.map(x => (x._1, x._2.maxBy(y => y.score).score, x._2.maxBy(y => y.score).tags))
   }
-
 
   /** Compute the vectors for the kmeans */
-  /** please keep the function name but you can modify the parameters for this function*/
-  def vectorPostings(scored): = {
-
-  	//ToDo
-  	//
+  /** please keep the function name but you can modify the parameters for this function */
+  def vectorPostings(scored: RDD[(Int, Int, Option[String])]): RDD[(Int, Int)] = {
+    scored.map(x => (Domains.indexOf(x._3) * DomainSpread, x._2))
   }
 
-
-
-
-  //
   //
   //  Kmeans method:
   //
-  //
 
   /** Main kmeans computation */
-  /** please keep the function name but you can modify the parameters for this function*/
+  /** please keep the function name but you can modify the parameters for this function */
   @tailrec final def kmeans(): = {
-
     //ToDo
-
-    }
   }
+}
 
-
-  //
   //
   //  Kmeans utilities (Just some cases, you can implement your own utilities.)
-  //
   //
 
   /** Decide whether the kmeans clustering converged */
   def converged(distance: Double) = distance < kmeansEta
-
 
   /** Return the euclidean distance between two points */
   def euclideanDistance(v1: (Int, Int), v2: (Int, Int)): Double = {
@@ -165,7 +139,6 @@ class Assignment2 extends Serializable {
     bestIndex
   }
 
-
   /** Average the vectors */
   def averageVectors(ps: Iterable[(Int, Int)]): (Int, Int) = {
     val iter = ps.iterator
@@ -181,7 +154,6 @@ class Assignment2 extends Serializable {
     ((comp1 / count).toInt, (comp2 / count).toInt)
   }
 
-
   def computeMedian(a: Iterable[(Int, Int)]) = {
     val s = a.map(x => x._2).toArray
     val length = s.length
@@ -189,8 +161,7 @@ class Assignment2 extends Serializable {
     if (length % 2 == 0) (lower.last + upper.head) / 2 else upper.head
   }
 
-  //  Displaying results:
-
+  //  Displaying results
   def printResults():  = {
 
   }
