@@ -99,12 +99,19 @@ class Assignment2 extends Serializable {
     var iter: Int = 0
     var distance: Double = Double.PositiveInfinity
     // Initialise kmeansKernels random points as centroids
-    var centroids: Array[(Int, Int)] = ??
+    var centroids: Array[(Int, Int)] = ???
+    var new_centroids: Array[(Int, Int)] = centroids.clone()
     var results: RDD[((Int, Int), Iterable[(Int, Int)])]
     while (!converged(distance) && iter < kmeansMaxIterations) {
       iter += 1;
+      // Initialise centroids to new_centroids
+      centroids = new_centroids
+      // Assign each data point to the closest centroid
       results = vectors.map(x => (findClosest(x, centroids), x)).groupByKey()
-      distance = ??
+      // Recompute centroids using current cluster memberships
+      new_centroids = ???
+      // Set convergence criterion parameter
+      distance = euclideanDistance(centroids, new_centroids)
     }
     results
   }
