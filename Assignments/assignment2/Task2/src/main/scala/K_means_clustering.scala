@@ -23,8 +23,8 @@ object Assignment2 extends Assignment2 {
     val grouped = groupedPostings(raw)
     val scored  = scoredPostings(grouped)
     val vectors = vectorPostings(scored)
-    val means   = kmeans(sampleVectors(vectors), vectors, debug = true)
-    val results = clusterResults(means, vectors)
+    val results   = kmeans(vectors)
+//    val results = clusterResults(means, vectors)
     printResults(results)
   }
 }
@@ -78,13 +78,14 @@ class Assignment2 extends Serializable {
   /** Compute the maximum score for each posting */
   /** Return the question ID, highest score among answers, and the domain **/
   /** please keep the function name but you can modify the parameters for this function */
-  def scoredPostings(grouped: RDD[(Int, Iterable[Posting])]): RDD[(Int, Int, Option[String])] = {
-    grouped.map(x => (x._1, x._2.maxBy(y => y.score).score, x._2.maxBy(y => y.score).tags))
+  def scoredPostings(grouped: RDD[(Int, Iterable[Posting])]): RDD[(Int, Int, String)] = {
+    grouped.map(x => (x._1, x._2.filter(z => z.parentId.isDefined).maxBy(y => y.score).score,
+      x._2.filter(z => z.parentId.isEmpty).head.tags.getOrElse("")))
   }
 
   /** Compute the vectors for the kmeans */
   /** please keep the function name but you can modify the parameters for this function */
-  def vectorPostings(scored: RDD[(Int, Int, Option[String])]): RDD[(Int, Int)] = {
+  def vectorPostings(scored: RDD[(Int, Int, String)]): RDD[(Int, Int)] = {
     scored.map(x => (Domains.indexOf(x._3) * DomainSpread, x._2))
   }
 
@@ -94,10 +95,19 @@ class Assignment2 extends Serializable {
 
   /** Main kmeans computation */
   /** please keep the function name but you can modify the parameters for this function */
-  @tailrec final def kmeans(): = {
-    //ToDo
+  @tailrec final def kmeans(vectors: RDD[(Int, Int)]): RDD[((Int, Int), Iterable[(Int, Int)])] = {
+    var iter: Int = 0
+    var distance: Double = Double.PositiveInfinity
+    // Initialise kmeansKernels random points as centroids
+    var centroids: Array[(Int, Int)] = ??
+    var results: RDD[((Int, Int), Iterable[(Int, Int)])]
+    while (!converged(distance) && iter < kmeansMaxIterations) {
+      iter += 1;
+      results = vectors.map(x => (findClosest(x, centroids), x)).groupByKey()
+      distance = ??
+    }
+    results
   }
-}
 
   //
   //  Kmeans utilities (Just some cases, you can implement your own utilities.)
@@ -113,7 +123,7 @@ class Assignment2 extends Serializable {
     part1 + part2
   }
 
-  /** Return the euclidean distance between two points */
+  /** Return the sum of euclidean distances between two sets of points, each set having same number of points */
   def euclideanDistance(a1: Array[(Int, Int)], a2: Array[(Int, Int)]): Double = {
     assert(a1.length == a2.length)
     var sum = 0d
@@ -129,7 +139,7 @@ class Assignment2 extends Serializable {
   def findClosest(p: (Int, Int), centers: Array[(Int, Int)]): Int = {
     var bestIndex = 0
     var closest = Double.PositiveInfinity
-    for (i <- 0 until centers.length) {
+    for (i <- centers.indices) {
       val tempDist = euclideanDistance(p, centers(i))
       if (tempDist < closest) {
         closest = tempDist
@@ -162,7 +172,7 @@ class Assignment2 extends Serializable {
   }
 
   //  Displaying results
-  def printResults():  = {
-
+  def printResults(results: RDD[((Int, Int), Iterable[(Int, Int)])]): Unit = {
+    //Todo
   }
 }

@@ -7,16 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3490db-861e-49f7-8aeb-f82012bbfa08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/modules/task2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/sbt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Task2/src/main/scala/K_means_clustering.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../assignment1/Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../assignment1/Task2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/src/main/scala/K_means_clustering.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/scala/K_means_clustering.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -126,7 +118,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550565922875" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550572545937" />
     <property name="last_opened_file_path" value="C:/spark-2.4.0-bin-hadoop2.7/jars" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
