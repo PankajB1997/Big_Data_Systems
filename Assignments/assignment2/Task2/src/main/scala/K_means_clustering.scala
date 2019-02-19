@@ -5,6 +5,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.rdd.PairRDDFunctions
 import annotation.tailrec
 import scala.reflect.ClassTag
+import scala.util.Random
 
 /** A raw posting, either a question or an answer */
 case class Posting(postingType: Int, id: Int, parentId: Option[Int], score: Int, tags: Option[String]) extends Serializable
@@ -99,9 +100,11 @@ class Assignment2 extends Serializable {
     var iter: Int = 0
     var distance: Double = Double.PositiveInfinity
     // Initialise kmeansKernels random points as centroids
-    var centroids: Array[(Int, Int)] = ???
+    var centroids: Array[(Int, Int)] = Random.shuffle(vectors.collect().toList).take(kmeansKernels)
     var new_centroids: Array[(Int, Int)] = centroids.clone()
+    // Initialise results RDD
     var results: RDD[((Int, Int), Iterable[(Int, Int)])]
+    // Keep computing centroids and assigning points until convergence
     while (!converged(distance) && iter < kmeansMaxIterations) {
       iter += 1;
       // Initialise centroids to new_centroids
@@ -110,6 +113,7 @@ class Assignment2 extends Serializable {
       results = vectors.map(x => (findClosest(x, centroids), x)).groupByKey()
       // Recompute centroids using current cluster memberships
       new_centroids = ???
+        // ??? new_centroids = results.aggregateByKey((0,0), lambda a,b:(a[0]+b,a[1]+1), lambda a,b:(a[0]+b[0],a[1]+b[1]))
       // Set convergence criterion parameter
       distance = euclideanDistance(centroids, new_centroids)
     }
