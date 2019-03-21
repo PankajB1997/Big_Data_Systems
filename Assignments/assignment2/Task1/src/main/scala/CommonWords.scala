@@ -35,9 +35,12 @@ object CommonWords {
     val inputFile2 = args(1)
     val outputFile = args(2)
     val stopwordsFile = args(3)
+
     // Create a Scala Spark Context.
     val conf = new SparkConf()
     val sc = new SparkContext(conf)
+    // val sc = SparkContext.getOrCreate()
+
     // Populate list of stopwords.
     val stopwords = populateStopwords(sc, stopwordsFile)
     // Run word count for each file

@@ -11,6 +11,8 @@ File structure in this submitted zip:-
 
 (iv) Task1.jar - JAR file that can be used to run the project and verify the result.
 
+(v) Task1/ directory - the Intellij Project that was created for Task 1
+
 
 2. Task 2/ directory contains the necessary submission for Task 2, namely:
 
@@ -21,6 +23,9 @@ File structure in this submitted zip:-
 (iii) all_recommended_items.txt - Same result as (ii), but for ALL user IDs. The result is sorted by user ID in ascending order, and for each user ID, by the calculated score in descending order.
 
 (iv) Task2.jar - JAR file that can be used to run the project and verify the result.
+
+(v) Task2/ directory - the Intellij Project that was created for Task 2
+
 
 3. report.pdf - a report describing the algorithm in both Task 1 and Task 2.
 
