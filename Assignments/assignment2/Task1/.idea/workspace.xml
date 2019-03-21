@@ -7,8 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c3490db-861e-49f7-8aeb-f82012bbfa08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/src/main/scala/Assignment2.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/src/main/scala/Assignment2.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$findClosest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$findClosest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$printResults$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$printResults$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$rawPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$rawPostings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$vectorPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$vectorPostings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -128,7 +154,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553192430387" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553199282151" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
