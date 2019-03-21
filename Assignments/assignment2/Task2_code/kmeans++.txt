@@ -1,0 +1,63 @@
+def kmeans_init(rdd, K, RUNS, seed):
+    '''
+    Select `RUNS` sets of initial points for `K`-means++
+    '''
+    # the `centers` variable is what we want to return
+    n_data = rdd.count()
+    shape = rdd.take(1)[0][1].shape[0]
+    centers = np.zeros((RUNS, K, shape))
+    def update_dist(vec, dist, k):
+        new_dist = norm(vec - centers[:, k], axis=1)**2
+        return np.min([dist, new_dist], axis=0)
+    # The second element `dist` in the tuple below is the
+    # closest distance from each data point to the selected
+    # points in the initial set, where `dist[i]` is the
+    # closest distance to the points in the i-th initial set
+    data = (rdd
+            .map(lambda p: (p, [np.inf] * RUNS)) \
+            .cache())
+    # Collect the feature vectors of all data points
+    # beforehand, might be useful in the following
+    # for-loop
+    local_data = (rdd
+                    .map(lambda (name, vec): vec)
+                    .collect())
+    # Randomly select the first point for every run of
+    # k-means++, i.e. randomly select `RUNS` points
+    # and add it to the `centers` variable
+    sample = [local_data[k] for k in
+        np.random.randint(0, len(local_data), RUNS)]
+    centers[:, 0] = sample
+    for idx in range(K - 1):
+        ########################################################
+        # In each iteration, you need to select one point for
+        # each set of initial points (so select `RUNS` points
+        # in total). For each data point x, let D_i(x) be the
+        # distance between x and the nearest center that has
+        # already been added to the i-th set. Choose a new
+        # data point for i-th set using a weighted probability
+        # where point x is chosen with probability proportional
+        # to D_i(x)^2 . Repeat each data point by 25 times
+        # (for each RUN) to get 12140x25
+        ########################################################
+        #Update distance
+        data = (data
+            .map(lambda ((name,vec),dist):
+                    ((name,vec),update_dist(vec,dist,idx)))
+            .cache())
+        #Calculate sum of D_i(x)^2
+        d1 = data.map(lambda ((name,vec),dist): (1,dist))
+        d2 = d1.reduceByKey(lambda x,y: np.sum([x,y], axis=0))
+        total = d2.collect()[0][1]
+        #Normalize each distance to get the probabilities and
+        #reshapte to 12140x25
+        prob = (data
+            .map(lambda ((name,vec),dist):
+                np.divide(dist,total))
+            .collect())
+        prob = np.reshape(prob,(len(local_data), RUNS))
+        #K'th centroid for each run
+        data_id = [choice(prob[:,i]) for i in xrange(RUNS)]
+        sample = [local_data[i] for i in data_id]
+        centers[:, idx+1] = sample
+    return centers

@@ -13,7 +13,12 @@
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$13$$anonfun$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$13$$anonfun$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$13$$anonfun$16.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$13$$anonfun$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$13.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$5.class" afterDir="false" />
@@ -23,16 +28,13 @@
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$centroid$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$findClosest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$findClosest$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$printResults$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$printResults$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$rawPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$rawPostings$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$vectorPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$vectorPostings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$printResults$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$$anonfun$printResults$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Task2/target/scala-2.11/classes/Assignment2.class" afterDir="false" />
     </list>
@@ -73,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/CommonWords.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="357">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="40" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -154,7 +156,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553199282151" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553204556855" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -345,8 +347,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/CommonWords.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="357">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="40" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>

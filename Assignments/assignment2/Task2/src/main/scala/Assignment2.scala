@@ -16,7 +16,6 @@ object Assignment2 extends Assignment2 {
   @transient lazy val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Assignment2")
   @transient lazy val sc: SparkContext = new SparkContext(conf)
 //  @transient lazy val sc: SparkContext = SparkContext.getOrCreate()
-  //sc.setLogLevel("WARN")
   sc.setLogLevel("ERROR")
 
   /** Main function */
@@ -65,7 +64,6 @@ class Assignment2 extends Serializable {
       val arr = line.split(",")
       Posting(postingType =    arr(0).toInt,
         id =             arr(1).toInt,
-        //        acceptedAnswer = if (arr(2) == "") None else Some(arr(2).toInt),
         parentId =       if (arr(2) == "") None else Some(arr(2).toInt),
         score =          arr(3).toInt,
         tags =           if (arr.length >= 5) Some(arr(4).intern()) else None)
@@ -110,6 +108,18 @@ class Assignment2 extends Serializable {
     scored.map(x => (Domains.indexOf(x._3) * DomainSpread, x._2)).distinct()
   }
 
+  /** Sample the vectors for kmeans - get 'perDomain' points per domain */
+  def sampleVectors(vectors: RDD[(Int, Int)]): List[(Double, Double)] = {
+    assert(kmeansKernels % Domains.length == 0, "kmeansKernels should be a multiple of the number of Domains.")
+    val perDomain = kmeansKernels / Domains.length
+    val DomainLabelToScore: RDD[(String, Iterable[Int])] = vectors.map(x => (Domains.apply(x._1 / DomainSpread), x._2)).groupByKey()
+    val pointsByDomain = vectors.map(x => (Domains.apply(x._1 / DomainSpread), x._2)).groupByKey.map {
+      case (key, numbers) =>
+        key -> numbers.toList.take(perDomain)
+    }
+    pointsByDomain.flatMapValues(x => x).map(x => (Domains.indexOf(x._1).toDouble * DomainSpread, x._2.toDouble)).collect().toList
+  }
+
   //
   //  Kmeans method:
   //
@@ -117,11 +127,11 @@ class Assignment2 extends Serializable {
   /** Main kmeans computation */
   /** please keep the function name but you can modify the parameters for this function */
   final def kmeans(vectors: RDD[(Int, Int)]): RDD[((Double, Double), Iterable[(Double, Double)])] = {
-    println("Total : " + vectors.count() + "\n")
     var iter: Int = 0
     var distance: Double = Double.PositiveInfinity
     // Initialise kmeansKernels random points as centroids
-    var new_centroids: List[(Double, Double)] = Random.shuffle(vectors.map(x => (x._1.toDouble, x._2.toDouble)).collect().toList).take(kmeansKernels)
+    var new_centroids: List[(Double, Double)] = sampleVectors(vectors)
+    // var new_centroids: List[(Double, Double)] = Random.shuffle(vectors.map(x => (x._1.toDouble, x._2.toDouble)).collect().toList).take(kmeansKernels)
     var results: RDD[((Double, Double), Iterable[(Double, Double)])] = null
     // Keep computing centroids and assigning points until convergence
     while (!converged(distance) && iter < kmeansMaxIterations) {
@@ -130,9 +140,6 @@ class Assignment2 extends Serializable {
       var centroids = new_centroids
       // Assign each data point to the closest centroid
       results = vectors.map(x => (x._1.toDouble, x._2.toDouble)).map(x => (findClosest(x, centroids), x)).groupByKey()
-      printStats(results)
-      println("Number of clusters : " + results.count())
-      println()
       // Recompute centroids using current cluster memberships
       new_centroids = results.map(x => centroid(x._2)).collect().toList
       // Set convergence criterion parameter
@@ -211,19 +218,6 @@ class Assignment2 extends Serializable {
     if (length % 2 == 0) (lower.last + upper.head) / 2 else upper.head
   }
 
-//  def printStats(result: ((Double, Double), Iterable[(Double, Double)])): Unit = {
-//    var centroid = result._1
-//    var size = result._2.size
-//    var median = computeMedian(result._2)
-//    var average = averageVectors(result._2)
-//    println("(" + centroid._1 + "," + centroid._2 + ");" + size + ";" + median + ";" + average)
-//  }
-//
-//  //  Displaying results
-//  def printResults(results: RDD[((Double, Double), Iterable[(Double, Double)])]): Unit = {
-//    results.foreach(printStats)
-//  }
-
   //  Displaying results:
   def clusterResults(closestGrouped: RDD[((Double, Double), Iterable[(Double, Double)])]): Array[(String, Double, Int, Double)] = {
     val median = closestGrouped.mapValues { vs =>
@@ -234,6 +228,7 @@ class Assignment2 extends Serializable {
       val medianScore: Double = computeMedian(vs)
       (DomainLabel, DomainPercent, clusterSize, medianScore)
     }
+    val questionCounts = median.map(_._2).map(x => (x._1, x._3)).reduceByKey{case (x, y) => x + y}
     median.collect().map(_._2).sortBy(_._4)
   }
 
@@ -243,9 +238,5 @@ class Assignment2 extends Serializable {
     println("================================================")
     for ((domain, percent, size, score) <- results)
       println(f"${score.toInt}%7d  ${domain}%-17s (${percent}%-5.1f%%) ${size}%7d")
-  }
-
-  def printStats(results: RDD[((Double, Double), Iterable[(Double, Double)])]) = {
-    printResults(clusterResults(results))
   }
 }
