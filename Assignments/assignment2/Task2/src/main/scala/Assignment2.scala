@@ -15,11 +15,12 @@ object Assignment2 extends Assignment2 {
 
   @transient lazy val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Assignment2")
   @transient lazy val sc: SparkContext = new SparkContext(conf)
+//  @transient lazy val sc: SparkContext = SparkContext.getOrCreate()
   //sc.setLogLevel("WARN")
 
   /** Main function */
   def main(args: Array[String]): Unit = {
-    val lines   = sc.textFile("QA_data.csv")
+    val lines   = sc.textFile("src/main/resources/QA_data.csv")
     val raw     = rawPostings(lines)
     val grouped = groupedPostings(raw)
     val scored  = scoredPostings(grouped)
@@ -97,23 +98,21 @@ class Assignment2 extends Serializable {
 
   /** Main kmeans computation */
   /** please keep the function name but you can modify the parameters for this function */
-  @tailrec final def kmeans(vectors: RDD[(Int, Int)]): RDD[((Double, Double), Iterable[(Int, Int)])] = {
+  final def kmeans(vectors: RDD[(Int, Int)]): RDD[((Double, Double), Iterable[(Double, Double)])] = {
     var iter: Int = 0
     var distance: Double = Double.PositiveInfinity
     // Initialise kmeansKernels random points as centroids
-    var centroids: List[(Int, Int)] = Random.shuffle(vectors.collect().toList).take(kmeansKernels)
-    var new_centroids: Array[(Double, Double)] = centroids.clone()
-    // Initialise results RDD
-    var results: RDD[((Int, Int), Iterable[(Int, Int)])]
+    var new_centroids: List[(Double, Double)] = Random.shuffle(vectors.map(x => (x._1.toDouble, x._2.toDouble)).collect().toList).take(kmeansKernels)
+    var results: RDD[((Double, Double), Iterable[(Double, Double)])] = null
     // Keep computing centroids and assigning points until convergence
     while (!converged(distance) && iter < kmeansMaxIterations) {
-      iter += 1;
+      iter += 1
       // Initialise centroids to new_centroids
-      centroids = new_centroids
+      var centroids = new_centroids
       // Assign each data point to the closest centroid
-      results = vectors.map(x => (findClosest(x, centroids), x)).groupByKey()
+      results = vectors.map(x => (x._1.toDouble, x._2.toDouble)).map(x => (findClosest(x, centroids), x)).groupByKey()
       // Recompute centroids using current cluster memberships
-      new_centroids = results.map(x => centroid(x._2.toList)).collect()
+      new_centroids = results.map(x => centroid(x._2)).collect().toList
       // Set convergence criterion parameter
       distance = euclideanDistance(centroids, new_centroids)
     }
@@ -124,30 +123,26 @@ class Assignment2 extends Serializable {
   //  Kmeans utilities (Just some cases, you can implement your own utilities.)
   //
 
-  def centroid(points: List[(Int, Int)]): (Double, Double) = {
-    var sumX = 0
-    var sumY = 0
-    var count = 0
-    points.foreach({
-      sumX += _._1
-      sumY += _._2
-      count += 1
-    })
-    (sumX/count, sumY/count)
+  def centroid(points: Iterable[(Double, Double)]): (Double, Double) = {
+    var sumX = 0.0
+    var sumY = 0.0
+    points.foreach(sumX += _._1)
+    points.foreach(sumY += _._2)
+    (sumX/points.size, sumY/points.size)
   }
 
   /** Decide whether the kmeans clustering converged */
-  def converged(distance: Double) = distance < kmeansEta
+  def converged(distance: Double): Boolean = distance < kmeansEta
 
   /** Return the euclidean distance between two points */
-  def euclideanDistance(v1: (Int, Int), v2: (Int, Int)): Double = {
+  def euclideanDistance(v1: (Double, Double), v2: (Double, Double)): Double = {
     val part1 = (v1._1 - v2._1).toDouble * (v1._1 - v2._1)
     val part2 = (v1._2 - v2._2).toDouble * (v1._2 - v2._2)
     part1 + part2
   }
 
   /** Return the sum of euclidean distances between two sets of points, each set having same number of points */
-  def euclideanDistance(a1: Array[(Int, Int)], a2: Array[(Int, Int)]): Double = {
+  def euclideanDistance(a1: List[(Double, Double)], a2: List[(Double, Double)]): Double = {
     assert(a1.length == a2.length)
     var sum = 0d
     var idx = 0
@@ -159,7 +154,7 @@ class Assignment2 extends Serializable {
   }
 
   /** Return the closest point */
-  def findClosest(p: (Int, Int), centers: Array[(Double, Double)]): Int = {
+  def findClosest(p: (Double, Double), centers: List[(Double, Double)]): (Double, Double) = {
     var bestIndex = 0
     var closest = Double.PositiveInfinity
     for (i <- centers.indices) {
@@ -173,11 +168,11 @@ class Assignment2 extends Serializable {
   }
 
   /** Average the vectors */
-  def averageVectors(ps: Iterable[(Int, Int)]): (Int, Int) = {
+  def averageVectors(ps: Iterable[(Double, Double)]): (Double, Double) = {
     val iter = ps.iterator
     var count = 0
-    var comp1: Long = 0
-    var comp2: Long = 0
+    var comp1: Double = 0.0
+    var comp2: Double = 0.0
     while (iter.hasNext) {
       val item = iter.next
       comp1 += item._1
@@ -187,22 +182,23 @@ class Assignment2 extends Serializable {
     ((comp1 / count).toInt, (comp2 / count).toInt)
   }
 
-  def computeMedian(a: Iterable[(Int, Int)]) = {
+  def computeMedian(a: Iterable[(Double, Double)]): Double = {
     val s = a.map(x => x._2).toArray
     val length = s.length
     val (lower, upper) = s.sortWith(_<_).splitAt(length / 2)
     if (length % 2 == 0) (lower.last + upper.head) / 2 else upper.head
   }
 
+  def printStats(result: ((Double, Double), Iterable[(Double, Double)])): Unit = {
+    var centroid = result._1
+    var size = List(result._2).size
+    var median = computeMedian(result._2)
+    var average = averageVectors(result._2)
+    println("(" + centroid._1 + "," + centroid._2 + ");" + size + ";" + median + ";" + average)
+  }
+
   //  Displaying results
-  def printResults(results: RDD[((Double, Double), Iterable[(Int, Int)])]): Unit = {
-    var centroid, size, median, average;
-    results.foreach({
-      centroid = _._1
-      size = List(_._2).size
-      median = computeMedian(_._2)
-      average = averageVectors(_._2)
-      println("(" + centroid._1 + "," + centroid._2 + ");" + size + ";" + median + ";" + average)
-    })
+  def printResults(results: RDD[((Double, Double), Iterable[(Double, Double)])]): Unit = {
+    results.foreach(printStats)
   }
 }
