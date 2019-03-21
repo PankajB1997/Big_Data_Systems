@@ -72,18 +72,35 @@ class Assignment2 extends Serializable {
 
   /** Group the questions and answers together */
   /** please keep the function name but you can modify the parameters for this function */
-  def groupedPostings(raw: RDD[Posting]): RDD[(Int, Iterable[Posting])]  = {
+  def groupedPostings(postings: RDD[Posting]): RDD[((Int, Posting), Iterable[Posting])]  = {
     // Filter the questions and answers separately
-    // Prepare them for a join operation by extracting the QID value in the first element of a tuple
-    raw.map(x => (x.parentId.getOrElse(x.id), x)).groupByKey()
+    // Prepare them for a join operation by extracting the QID value in the first element of a tuple.
+    val questions = postings
+      .filter(_.postingType == 1)
+      .map(posting => (posting.id, posting))
+
+    val answers = postings
+      .filter(_.postingType == 2)
+      .filter(_.parentId.isDefined)
+      .map(posting => (posting.parentId, posting))
+
+    val answers_flattened = for ((Some(k), v) <- answers ) yield (k, v)
+
+    // Use one of the join operations to obtain an RDD[(QID, (Question, Answer))]
+    // Then map this RDD to RDD[((QID, Question), Answer)]
+    val joined = questions.join(answers_flattened).map(x => ((x._1, x._2._1), x._2._2))
+
+    // Obtain an RDD[(QID, Iterable[(Question, Answer)])].
+    joined.groupByKey()
   }
 
   /** Compute the maximum score for each posting */
   /** Return the question ID, highest score among answers, and the domain **/
   /** please keep the function name but you can modify the parameters for this function */
-  def scoredPostings(grouped: RDD[(Int, Iterable[Posting])]): RDD[(Int, Int, String)] = {
-    grouped.map(x => (x._1, x._2.filter(z => z.parentId.isDefined).maxBy(y => y.score).score,
-      x._2.filter(z => z.parentId.isEmpty).head.tags.getOrElse("")))
+  def scoredPostings(grouped: RDD[((Int, Posting), Iterable[Posting])]): RDD[(Int, Int, String)] = {
+    grouped.map(x => (x._1._1,
+      x._2.maxBy(y => y.score).score,
+      x._1._2.tags.getOrElse("")))
   }
 
   /** Compute the vectors for the kmeans */
