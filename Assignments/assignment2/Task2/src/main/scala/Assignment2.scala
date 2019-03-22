@@ -40,7 +40,7 @@ class Assignment2 extends Serializable {
   assert(DomainSpread > 0)
 
   /** K-means parameter: Number of clusters */
-  def kmeansKernels = 45
+  def kmeansKernels = 75
 
   /** K-means parameter: Convergence criteria, if distance < kmeansEta, stop*/
   def kmeansEta: Double = 20.0D
@@ -104,7 +104,7 @@ class Assignment2 extends Serializable {
 
   /** Sample the vectors for kmeans - get 'perDomain' points per domain */
   def sampleVectors(vectors: RDD[(Int, Int)]): List[(Double, Double)] = {
-    assert(kmeansKernels % Domains.length == 0, "kmeansKernels should be a multiple of the number of Domains.")
+//    assert(kmeansKernels % Domains.length == 0, "kmeansKernels should be a multiple of the number of Domains.")
     val perDomain = kmeansKernels / Domains.length
     val DomainLabelToScore: RDD[(String, Iterable[Int])] = vectors.map(x => (Domains.apply(x._1 / DomainSpread), x._2)).groupByKey()
     // pick a fixed number of points as initial centroids from each domain
@@ -139,6 +139,7 @@ class Assignment2 extends Serializable {
       new_centroids = results.map(x => centroid(x._2)).collect().toList
       // Set convergence criterion parameter
       distance = euclideanDistance(centroids, new_centroids)
+      println(iter)
     }
     results
   }
