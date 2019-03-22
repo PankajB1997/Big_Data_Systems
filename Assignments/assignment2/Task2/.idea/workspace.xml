@@ -7,11 +7,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc7b6db3-f819-40cc-ad05-31cfaa89b992" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Task2_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Task1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Task1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/Assignment2.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/Assignment2.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$15.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$16$$anonfun$17.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$16$$anonfun$18.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$16$$anonfun$19.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$16$$anonfun$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$20.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$21.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$centroid$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$centroid$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$centroid$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$centroid$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$clusterResults$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$findClosest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$findClosest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$kmeans$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$printResults$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$printResults$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$printResults$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$printResults$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$rawPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$rawPostings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$sampleVectors$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$sampleVectors$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$sampleVectors$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$sampleVectors$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$sampleVectors$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$sampleVectors$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1$$anonfun$apply$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$scoredPostings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$vectorPostings$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$$anonfun$vectorPostings$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Assignment2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Posting$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Posting$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Posting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Posting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../submission/Assignment 2/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../submission/Assignment 2/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../submission/Assignment 2/Task 1/commonwords_output_top15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../submission/Assignment 2/Task 1/commonwords_output_top15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../submission/Assignment 2/Task 2/Assignment2.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../../submission/Assignment 2/Task 2/Assignment2.scala" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,8 +94,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Assignment2.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+            <state relative-caret-position="164">
+              <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -139,7 +183,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553206582505" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553259750719" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Task1" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -222,7 +266,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -231,7 +275,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.48300284" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.50708216" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -264,8 +308,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Assignment2.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="28" column="33" lean-forward="true" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+        <state relative-caret-position="164">
+          <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>

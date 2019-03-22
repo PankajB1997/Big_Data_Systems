@@ -1,11 +1,6 @@
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
-import org.apache.spark.SparkContext._
 import org.apache.spark.rdd.{PairRDDFunctions, RDD}
-
-import annotation.tailrec
-import scala.reflect.ClassTag
-import scala.util.Random
 
 /** A raw posting, either a question or an answer */
 case class Posting(postingType: Int, id: Int, parentId: Option[Int], score: Int, tags: Option[String]) extends Serializable
@@ -15,12 +10,10 @@ object Assignment2 extends Assignment2 {
 
   @transient lazy val conf: SparkConf = new SparkConf().setMaster("local").setAppName("Assignment2")
   @transient lazy val sc: SparkContext = new SparkContext(conf)
-  //  @transient lazy val sc: SparkContext = SparkContext.getOrCreate()
   sc.setLogLevel("ERROR")
 
   /** Main function */
   def main(args: Array[String]): Unit = {
-//    val lines   = sc.textFile("src/main/resources/QA_data.csv")
     val lines   = sc.textFile(args(0))
     val raw     = rawPostings(lines)
     val grouped = groupedPostings(raw)
@@ -114,6 +107,7 @@ class Assignment2 extends Serializable {
     assert(kmeansKernels % Domains.length == 0, "kmeansKernels should be a multiple of the number of Domains.")
     val perDomain = kmeansKernels / Domains.length
     val DomainLabelToScore: RDD[(String, Iterable[Int])] = vectors.map(x => (Domains.apply(x._1 / DomainSpread), x._2)).groupByKey()
+    // pick a fixed number of points as initial centroids from each domain
     val pointsByDomain = vectors.map(x => (Domains.apply(x._1 / DomainSpread), x._2)).groupByKey.map {
       case (key, numbers) =>
         key -> numbers.toList.take(perDomain)
@@ -212,6 +206,7 @@ class Assignment2 extends Serializable {
     ((comp1 / count).toInt, (comp2 / count).toInt)
   }
 
+  // Return median score of given cluster
   def computeMedian(a: Iterable[(Double, Double)]): Double = {
     val s = a.map(x => x._2).toArray
     val length = s.length
@@ -219,25 +214,38 @@ class Assignment2 extends Serializable {
     if (length % 2 == 0) (lower.last + upper.head) / 2 else upper.head
   }
 
+  // Return average score of given cluster
+  def computeAverage(a: Iterable[(Double, Double)]): Double = {
+    val s = a.map(x => x._2).toArray
+    var sum = 0.0
+    var i=0
+    while (i < s.length) {
+      sum += s(i)
+      i += 1
+    }
+    sum / s.length
+  }
+
   //  Displaying results:
-  def clusterResults(closestGrouped: RDD[((Double, Double), Iterable[(Double, Double)])]): Array[(String, Double, Int, Double)] = {
+  def clusterResults(closestGrouped: RDD[((Double, Double), Iterable[(Double, Double)])]): Array[(String, Double, Int, Double, Double)] = {
     val median = closestGrouped.mapValues { vs =>
       val DomainId: Int = vs.map(_._1.toInt).groupBy(identity).maxBy(_._2.size)._1 // most common domain in the cluster
-    val DomainLabel: String   = Domains.apply(DomainId / DomainSpread) // most common domain in the cluster
-    val clusterSize: Int    = vs.size
+      val DomainLabel: String   = Domains.apply(DomainId / DomainSpread) // most common domain in the cluster
+      val clusterSize: Int    = vs.size
       val DomainPercent: Double = vs.count(v => v._1 == DomainId) * 100d / clusterSize // percent of the questions in the most common domain
-    val medianScore: Double = computeMedian(vs)
-      (DomainLabel, DomainPercent, clusterSize, medianScore)
+      val medianScore: Double = computeMedian(vs)
+      val averageScore: Double = computeAverage(vs)
+      (DomainLabel, DomainPercent, clusterSize, medianScore, averageScore)
     }
     val questionCounts = median.map(_._2).map(x => (x._1, x._3)).reduceByKey{case (x, y) => x + y}
     median.collect().map(_._2).sortBy(_._4)
   }
 
-  def printResults(results: Array[(String, Double, Int, Double)]): Unit = {
+  def printResults(results: Array[(String, Double, Int, Double, Double)]): Unit = {
     println("Resulting clusters:")
-    println("  Score  Dominant Domain (%percent)  Questions")
-    println("================================================")
-    for ((domain, percent, size, score) <- results)
-      println(f"${score.toInt}%7d  ${domain}%-17s (${percent}%-5.1f%%) ${size}%7d")
+    println("  Score | Dominant Domain | (%percent) | Questions | Average Score")
+    println("=====================================================================")
+    for ((domain, percent, size, median_score, average_score) <- results)
+      println(f"${median_score.toInt}%7d  ${domain}%-17s  (${percent}%-5.1f%%)  ${size}%7d       (${average_score}%-5.1f)")
   }
 }
