@@ -1,1 +1,0 @@
-Refer to the instructions at https://github.com/toddwschneider/nyc-taxi-data for downloading the Uber dataset (worth 347 GB).
