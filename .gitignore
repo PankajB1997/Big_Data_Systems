@@ -4,7 +4,6 @@ sentiment_analysis/project/
 sentiment_analysis/target/
 *.iml
 *.xml
-*.zip
 *.jar
 *.csv
 .DS_Store
